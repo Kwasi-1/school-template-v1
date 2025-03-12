@@ -23,7 +23,7 @@ const HeroSection = () => {
   return (
     <section className="relative w-full h-screen flex items-center justify-center text-center text-white">
       {/* Background Image Slider */}
-      <div className="absolute inset-0 overflow-hidden container rounded-[20px]">
+      <div className="absolute inset-0 overflow-hidden container mx-auto rounded-[20px]">
         {images.map((src, index) => (
           <Image
             key={index}
@@ -53,7 +53,8 @@ const HeroSection = () => {
 
         {/* Subtext */}
         <p className="mt-4 text-lg text-gray-200">
-          Remember to tailor the section names to fit the specific needs and structure of your university website.
+          Remember to tailor the section names to fit the specific needs and
+          structure of your university website.
         </p>
 
         {/* Button */}
