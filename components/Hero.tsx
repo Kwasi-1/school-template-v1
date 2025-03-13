@@ -33,6 +33,7 @@ const HeroSection = () => {
 
   return (
     <section
+      id="herosection"
       className={`relative ${containerClasses} flex items-center justify-center text-center text-white`}
     >
       {/* Background Image Slider */}
