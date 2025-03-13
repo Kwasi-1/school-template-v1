@@ -5,6 +5,7 @@ import { School } from "lucide-react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import SchoolLogo from "./SchoolLogo";
+import Link from "next/link";
 
 const Footer = () => {
   const pathname = usePathname();
@@ -61,13 +62,6 @@ const Footer = () => {
           {/* Left Section: Logo and Info */}
           <div>
             <h2 className="text-2xl font-semibold underline text-white">
-              {/* <Image
-                src="/school_logo.svg"
-                width={300}
-                height={300}
-                alt="school logo"
-              /> */}
-
               <SchoolLogo />
             </h2>
             <p className=" mt-4">
@@ -111,38 +105,23 @@ const Footer = () => {
           {/* Recent Posts */}
           <div>
             <h3 className="text-lg font-semibold mb-3 underline text-white">
-              Recent Posts
+              Quick Links
             </h3>
             <div className="space-y-4">
-              {/* Post 1 */}
-              <div className="flex items-center space-x-3">
-                <img
-                  src="/post1.jpg"
-                  alt="Post 1"
-                  className="w-16 h-16 object-cover rounded-lg"
-                />
-                <div>
-                  <p className="text-sm">📅 August 6, 2024</p>
-                  <p className="text-white">
-                    Those Inequalities Are Inequalities That
-                  </p>
-                </div>
-              </div>
+              <Link
+                href="/admission"
+                className="w-full bg-red-800 text-white font-semibold py-3 rounded-full hover:bg-red-900 transition block text-center"
+              >
+                Apply Now
+              </Link>
 
-              {/* Post 2 */}
-              <div className="flex items-center space-x-3">
-                <img
-                  src="/post2.jpg"
-                  alt="Post 2"
-                  className="w-16 h-16 object-cover rounded-lg"
-                />
-                <div>
-                  <p className="text-sm">📅 July 4, 2024</p>
-                  <p className="text-white">
-                    After Decades Of Improvement, Cardiovascular
-                  </p>
-                </div>
-              </div>
+              {/* Contact Button */}
+              <Link
+                href="/contact"
+                className="w-full mt-3 border border-white text-white font-semibold py-3 rounded-full hover:bg-white hover:text-black transition"
+              >
+                Contact
+              </Link>
             </div>
           </div>
         </div>
