@@ -1,30 +1,55 @@
 "use client";
 
+import { Icon } from "@iconify/react/dist/iconify.js";
+import { usePathname } from "next/navigation";
+
 const Footer = () => {
+  const pathname = usePathname();
+  const isLandingPage = pathname === "/";
+
   return (
-    <div>
+    <div className="bg-gray-100">
       {/* <div></div> */}
 
-      <div className="relative container mx-auto">
-        <div
-          className="relative flex md:flex-row justify-around items-center bg-red-800 md:w-11/12 lg:w-4/5 py-4 md:py-8 lg:py-10 rounded-2xl mx-4 md:mx-auto text-white mb-8 top-16 md:top-24"
-          style={{
-            backgroundImage: "url('footer_image.webp')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
-          {/* Contact Information using reusable component */}
-          <a href="https://maps.app.goo.gl/Kdr4PQ27nfd6ukvJ7">
-            Achimota Mile 7
-          </a>
-          <a href="mailto:autochef83@gmail.com">theautochef83@gmail.com</a>
-          <a href="tel:+233200666211">0200666211</a>
-        </div>
-      </div>
+      {!isLandingPage ? (
+        <></>
+      ) : (
+        <>
+          <div className="relative container mx-auto">
+            <div
+              className="relative flex flex-col md:flex-row justify-between items-center bg-red800 md:w-11/12 lg:w-4/5 py-8 md:py-12 px-16 rounded-lg mx-4 md:mx-auto text-white mb-8 top-16 md:top-24"
+              style={{
+                backgroundImage: "url('footer_image.webp')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundBlendMode: "multiply",
+              }}
+            >
+              {/* Heading Section */}
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-white text-left">
+                Don’t Miss Awesome Story <br /> From Our Alumni
+              </h2>
 
+              {/* Subscription Form */}
+              <div className="flex items-center ">
+                <div className="bg-transparent border border-white rounded-full px-4 py-4 mt-4 md:mt-0">
+                  <input
+                    type="email"
+                    placeholder="Enter Your mail"
+                    className="bg-transparent text-white placeholder-white outline-none px-2 w-48 md:w-60"
+                  />
+                </div>
+                <button className="bg-white  hover:bg-black text-red-800 hover:text-white font-semibold px-7 py-4 rounded-full ml-2 flex items-center transition duration-300">
+                  Subscribe
+                  <Icon icon="mdi:arrow-right" className="text-xl ml-2" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
 
-      <footer className="bg-black text-white py-12 px-6 md:px-20  pt-20">
+      <footer className="bg-[#181818] text-white py-12 px-6 md:px-20  pt-40">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Left Section: Logo and Info */}
           <div>
@@ -103,7 +128,7 @@ const Footer = () => {
         {/* Copyright Section */}
         <div className="mt-12 text-center text-gray-500 border-t border-gray-700 pt-6">
           <p>
-            Copyright &copy; {new Date().getFullYear()}. All Rights Reserved by 
+            Copyright &copy; {new Date().getFullYear()}. All Rights Reserved by
             <span className="text-white font-semibold"> Unipix</span>
           </p>
         </div>

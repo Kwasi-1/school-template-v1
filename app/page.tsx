@@ -32,9 +32,6 @@ export default function Home() {
 
       <UpcomingEvents />
 
-      {/* Footer */}
-      <Footer />
-
       {/* Floating Scroll-Up Button */}
       <Link
         href="#herosection"

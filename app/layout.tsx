@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/Hero";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,9 +29,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
-        <div className="mt-[100px] container mx-auto">
+        <div className="mt-[100px]">
           <HeroSection /> {/* Hero section added here */}
           <div>{children}</div>
+          <Footer />
         </div>
       </body>
     </html>
