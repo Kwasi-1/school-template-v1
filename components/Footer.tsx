@@ -1,7 +1,10 @@
 "use client";
 
 import { Icon } from "@iconify/react/dist/iconify.js";
+import { School } from "lucide-react";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
+import SchoolLogo from "./SchoolLogo";
 
 const Footer = () => {
   const pathname = usePathname();
@@ -49,16 +52,29 @@ const Footer = () => {
         </>
       )}
 
-      <footer className="bg-[#181818] text-white py-12 px-6 md:px-20  pt-40">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+      <footer
+        className={`bg-[#181818] text-[#737477] ${
+          isLandingPage && "pt-[60px]"
+        }`}
+      >
+        <div className="w-[90%] container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-between gap-8 px-6 md:px-20 py-[100px]">
           {/* Left Section: Logo and Info */}
           <div>
-            <h2 className="text-2xl font-semibold">UNIPIX UNIVERSITY</h2>
-            <p className="text-gray-400 mt-4">
+            <h2 className="text-2xl font-semibold underline text-white">
+              {/* <Image
+                src="/school_logo.svg"
+                width={300}
+                height={300}
+                alt="school logo"
+              /> */}
+
+              <SchoolLogo />
+            </h2>
+            <p className=" mt-4">
               We are passionate about education, dedicated to providing
               high-quality resources for learners of all backgrounds.
             </p>
-            <div className="mt-4 space-y-2 text-gray-400">
+            <div className="mt-4 space-y-2 ">
               <p>📍 Park, Melbourne, Australia</p>
               <p>📞 485-826-710</p>
             </div>
@@ -66,8 +82,10 @@ const Footer = () => {
 
           {/* Our Campus */}
           <div>
-            <h3 className="text-lg font-semibold mb-3">Our Campus</h3>
-            <ul className="space-y-2 text-gray-400">
+            <h3 className="text-lg font-semibold mb-3 underline text-white">
+              Our Campus
+            </h3>
+            <ul className="space-y-2 ">
               <li>Academic</li>
               <li>Athletics</li>
               <li>Campus Life</li>
@@ -78,8 +96,10 @@ const Footer = () => {
 
           {/* Our Pages */}
           <div>
-            <h3 className="text-lg font-semibold mb-3">Our Pages</h3>
-            <ul className="space-y-2 text-gray-400">
+            <h3 className="text-lg font-semibold mb-3 underline text-white">
+              Our Pages
+            </h3>
+            <ul className="space-y-2 ">
               <li>About</li>
               <li>Tuition Fee</li>
               <li>Alumni</li>
@@ -90,7 +110,9 @@ const Footer = () => {
 
           {/* Recent Posts */}
           <div>
-            <h3 className="text-lg font-semibold mb-3">Recent Posts</h3>
+            <h3 className="text-lg font-semibold mb-3 underline text-white">
+              Recent Posts
+            </h3>
             <div className="space-y-4">
               {/* Post 1 */}
               <div className="flex items-center space-x-3">
@@ -100,7 +122,7 @@ const Footer = () => {
                   className="w-16 h-16 object-cover rounded-lg"
                 />
                 <div>
-                  <p className="text-gray-400 text-sm">📅 August 6, 2024</p>
+                  <p className="text-sm">📅 August 6, 2024</p>
                   <p className="text-white">
                     Those Inequalities Are Inequalities That
                   </p>
@@ -115,7 +137,7 @@ const Footer = () => {
                   className="w-16 h-16 object-cover rounded-lg"
                 />
                 <div>
-                  <p className="text-gray-400 text-sm">📅 July 4, 2024</p>
+                  <p className="text-sm">📅 July 4, 2024</p>
                   <p className="text-white">
                     After Decades Of Improvement, Cardiovascular
                   </p>
@@ -126,10 +148,10 @@ const Footer = () => {
         </div>
 
         {/* Copyright Section */}
-        <div className="mt-12 text-center text-gray-500 border-t border-gray-700 pt-6">
+        <div className=" text-center border-t border-stone-700/20 py-6">
           <p>
             Copyright &copy; {new Date().getFullYear()}. All Rights Reserved by
-            <span className="text-white font-semibold"> Unipix</span>
+            <span className="text-white"> Unipix</span>
           </p>
         </div>
       </footer>
