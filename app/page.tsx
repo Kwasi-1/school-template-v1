@@ -1,15 +1,11 @@
 "use client";
 
-import AboutUs from "@/components/AboutUs";
-import AdmissionForm from "@/components/AdmissionForm";
-import Footer from "@/components/Footer";
-import HeroSection from "@/components/Hero";
-import Programs from "@/components/Programs";
-import TuitionFees from "@/components/TuitionFees";
-import UpcomingEvents from "@/components/UpcomingEvents";
-import { Icon } from "@iconify/react/dist/iconify.js";
+import AboutUs from "@/components/landing/AboutUs";
+import AdmissionForm from "@/components/landing/AdmissionForm";
+import Programs from "@/components/landing/Programs";
+import TuitionFees from "@/components/landing/TuitionFees";
+import UpcomingEvents from "@/components/landing/UpcomingEvents";
 import Head from "next/head";
-import Link from "next/link";
 
 export default function Home() {
   return (
