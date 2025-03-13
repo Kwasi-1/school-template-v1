@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const images = [
   "/hero_image_1.webp",
@@ -11,6 +13,9 @@ const images = [
 
 const HeroSection = () => {
   const [currentImage, setCurrentImage] = useState(0);
+  const pathname = usePathname();
+  const pageName =
+    pathname.split("/").filter(Boolean).pop()?.replace(/-/g, " ") || "Unknown";
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -20,53 +25,95 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // Conditional Styles
+  const isLandingPage = pathname === "/";
+  const containerClasses = isLandingPage
+    ? "w-full h-full py-[120px] "
+    : "h-[50vh]";
+
   return (
-    <section className="relative w-full h-screen flex items-center justify-center text-center text-white">
+    <section
+      className={`relative ${containerClasses} flex items-center justify-center text-center text-white`}
+    >
       {/* Background Image Slider */}
-      <div className="absolute inset-0 overflow-hidden container mx-auto rounded-[20px]">
-        {images.map((src, index) => (
+      <div
+        className={`absolute inset-0 overflow-hidden ${
+          isLandingPage && "rounded-[20px]"
+        }`}
+      >
+        {!isLandingPage ? (
           <Image
-            key={index}
-            src={src}
+            key={1}
+            src={images[1]}
             alt="University Building"
             layout="fill"
             objectFit="cover"
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentImage ? "opacity-100" : "opacity-0"
-            }`}
+            className={`absolute inset-0 transition-opacity duration-1000`}
           />
-        ))}
+        ) : (
+          <>
+            {images.map((src, index) => (
+              <Image
+                key={index}
+                src={src}
+                alt="University Building"
+                layout="fill"
+                objectFit="cover"
+                className={`absolute inset-0 transition-opacity duration-1000 ${
+                  index === currentImage ? "opacity-100" : "opacity-0"
+                }`}
+              />
+            ))}
+          </>
+        )}
         <div className="absolute inset-0 bg-black/50"></div>
       </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-3xl px-6">
-        {/* Icon */}
-        <div className="mb-6 flex justify-center">
-          <Image src="/university-icon.svg" alt="Icon" width={80} height={80} />
-        </div>
+        {/* Conditional Heading for Other Pages */}
+        {!isLandingPage ? (
+          <>
+            <h1 className="text-4xl font-semibold">{pageName}</h1>
+            <div>
+              <Link href="/">Home</Link> {">"} {pageName}
+            </div>
+          </>
+        ) : (
+          <>
+            {/* Icon */}
+            <div className="mb-6 flex justify-center">
+              <Image
+                src="/university-icon.svg"
+                alt="Icon"
+                width={80}
+                height={80}
+              />
+            </div>
 
-        {/* Main Heading */}
-        <h1 className="text-5xl md:text-6xl font-semibold leading-tight">
-          Academic Journey <br /> Begins Unipix
-        </h1>
+            {/* Main Heading */}
+            <h1 className="text-5xl md:text-6xl font-semibold leading-tight">
+              Academic Journey <br /> Begins Unipix
+            </h1>
 
-        {/* Subtext */}
-        <p className="mt-4 text-lg text-gray-200">
-          Remember to tailor the section names to fit the specific needs and
-          structure of your university website.
-        </p>
+            {/* Subtext */}
+            <p className="mt-4 text-lg text-gray-200">
+              Remember to tailor the section names to fit the specific needs and
+              structure of your university website.
+            </p>
 
-        {/* Button */}
-        <div className="mt-6">
-          <a
-            href="#"
-            className="inline-flex items-center gap-2 bg-[#A41E27] text-white px-6 py-3 text-lg font-medium rounded-lg hover:bg-[#86181F] transition duration-300"
-          >
-            View Our Program
-            <span>→</span>
-          </a>
-        </div>
+            {/* Button */}
+            <div className="mt-6">
+              <a
+                href="#"
+                className="inline-flex items-center gap-2 bg-[#A41E27] text-white px-6 py-3 text-lg font-medium rounded-lg hover:bg-[#86181F] transition duration-300"
+              >
+                View Our Program
+                <span>→</span>
+              </a>
+            </div>
+          </>
+        )}
       </div>
     </section>
   );
