@@ -68,10 +68,41 @@ const Footer = () => {
               We are passionate about education, dedicated to providing
               high-quality resources for learners of all backgrounds.
             </p>
-            <div className="mt-4 space-y-2 ">
-              <p>📍 Park, Melbourne, Australia</p>
-              <p>📞 485-826-710</p>
-            </div>
+
+            {/* Social Media Icons */}
+            {!isLandingPage ? (
+              <div className="flex space-x-3 text-white mt-8">
+                {[
+                  "ic:sharp-facebook",
+                  "mdi:instagram",
+                  "uil:linkedin",
+                  "iconoir:youtube-solid",
+                ].map((icon, idx) => (
+                  <Link
+                    key={idx}
+                    href={"#"}
+                    className=" border p-2 rounded-full hover:bg-[#800020] hover:border-[#800020] transition duration-300"
+                  >
+                    <Icon
+                      icon={icon}
+                      className="hover:text-primary cursor-pointer"
+                      width="22"
+                    />
+                  </Link>
+                ))}
+              </div>
+            ) : (
+              <div className="mt-8 space-y-2 ">
+                <div className="flex items-center space-x-2">
+                  <Icon icon="lsicon:location-outline" className="textwhite" />
+                  <span>Park, Melbourne, Australia</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Icon icon="material-symbols:call" className="" />
+                  <span>485-826-710</span>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Our Campus */}
@@ -110,7 +141,7 @@ const Footer = () => {
             <div className="space-y-4">
               <Link
                 href="/admission"
-                className="w-full bg-red-800 text-white font-semibold py-3 rounded-full hover:bg-red-900 transition block text-center"
+                className="w-full bg-[#800020] text-white font-semibold py-3 rounded-full hover:bg-[#66001a] transition duration-300 block text-center"
               >
                 Apply Now
               </Link>
@@ -118,7 +149,7 @@ const Footer = () => {
               {/* Contact Button */}
               <Link
                 href="/contact"
-                className="w-full mt-3 border border-white text-white font-semibold py-3 rounded-full hover:bg-white hover:text-black transition"
+                className="w-full mt-3 border border-white text-white font-semibold py-3 rounded-full hover:bg-[#800020] hover:border-[#800020] transition block text-center duration-300"
               >
                 Contact
               </Link>
