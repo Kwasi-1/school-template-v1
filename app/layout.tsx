@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/Hero";
 import Footer from "@/components/Footer";
+import BackToTopButton from "@/components/BackToTopButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +34,7 @@ export default function RootLayout({
           <HeroSection /> {/* Hero section added here */}
           <div>{children}</div>
           <Footer />
+          <BackToTopButton />
         </div>
       </body>
     </html>
