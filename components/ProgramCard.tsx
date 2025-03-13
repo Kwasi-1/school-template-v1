@@ -14,7 +14,7 @@ export default function ProgramCard({
   image,
 }: ProgramCardProps) {
   return (
-    <div className="relative rounded-lg max-w-[300px] max-h-[300px] group overflow-hidden">
+    <div className="relative rounded-lg max-w-[300px] max-h-[360px] h-[300px]  group overflow-hidden">
       {/* Background Image */}
       <Image
         src={image}
@@ -27,13 +27,13 @@ export default function ProgramCard({
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition duration-300"></div>
 
-      <div className="hidden group-hover:block transition duration-300">
+      <div className=" hidden group-hover:block transition duration-300 pb-[36px] px-[28px] pt-[40px]">
         {/* Description at the Top */}
-        <div className="absolute top-4 left-4 right-4 bg-black/60 text-white p-2 text-sm rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="absolute top-4 left-4 right-4 text-white p-2 text-sm rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           {description}
         </div>
 
-        <h3 className="absolute bottom-4 left-4 text-white font-semibold text-lg">
+        <h3 className="absolute bottom-4 left-4 text-white font-semibold text-base">
           Read more
         </h3>
       </div>
