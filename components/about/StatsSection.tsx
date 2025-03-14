@@ -1,7 +1,9 @@
+"use client"
+
 const StatsSection = () => {
   return (
-    <section className="w-[90%] mx-auto my-12">
-      <div className="bg-[#7F0019] text-white py-8 px-4 rounded-lg">
+    <section className="w-[70%] container mx-auto my-12">
+      <div className="bg-[#7F0019] text-white py-8 px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 text-center items-center gap-6">
           {/* Stat 1 */}
           <div className="relative">
