@@ -1,13 +1,19 @@
+"use client"
+
+import Image from "next/image";
+
 const HistorySection = () => {
   return (
-    <section className="w-[90%] mx-auto py-[100px]">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <section className="w-[85%] mx-auto py-[100px] container">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-15 items-center">
         {/* Image */}
         <div>
-          <img
+          <Image
             src="/About_us_image.webp" // Change to your actual image path
             alt="Library and bust statues"
-            className="w-full rounded-lg object-cover"
+            className="w-full object-cover"
+            width={300}
+            height={300}
           />
         </div>
 
