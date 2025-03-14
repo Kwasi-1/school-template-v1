@@ -28,13 +28,13 @@ const HeroSection = () => {
   // Conditional Styles
   const isLandingPage = pathname === "/";
   const containerClasses = isLandingPage
-    ? "w-full h-full py-[120px] "
-    : "h-[50vh]";
+    ? "w-full container mx-auto h-full py-[120px] "
+    : "h-[60vh]";
 
   return (
     <section
       id="herosection"
-      className={`relative ${containerClasses} flex items-center justify-center text-center text-white`}
+      className={`relative ${containerClasses} flex items-center justify-center text-center text-white select-none`}
     >
       {/* Background Image Slider */}
       <div
@@ -67,7 +67,7 @@ const HeroSection = () => {
             ))}
           </>
         )}
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/35"></div>
       </div>
 
       {/* Content */}
@@ -75,25 +75,25 @@ const HeroSection = () => {
         {/* Conditional Heading for Other Pages */}
         {!isLandingPage ? (
           <>
-            <h1 className="text-4xl font-semibold">{pageName}</h1>
-            <div>
+            <h1 className="text-4xl font-semibold capitalize">{pageName}</h1>
+            <div className="capitalize">
               <Link href="/">Home</Link> {">"} {pageName}
             </div>
           </>
         ) : (
           <>
             {/* Icon */}
-            <div className="mb-6 flex justify-center">
+            <div className="my-12 flex justify-center">
               <Image
-                src="/university-icon.svg"
+                src="/banner__3-icon.svg"
                 alt="Icon"
-                width={80}
-                height={80}
+                width={150}
+                height={150}
               />
             </div>
 
             {/* Main Heading */}
-            <h1 className="text-5xl md:text-6xl font-semibold leading-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight">
               Academic Journey <br /> Begins Unipix
             </h1>
 
