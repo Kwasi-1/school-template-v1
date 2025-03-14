@@ -13,13 +13,13 @@ const socialLinks = [
 ];
 
 const campusLinks = [
-  "Academic",
-  "Athletics",
-  "Campus Life",
-  "Research",
-  "Academic Area",
+  "academic",
+  "athletics",
+  "aampus Life",
+  "research",
+  "academic Area",
 ];
-const pageLinks = ["About", "Tuition Fee", "Alumni", "Faculty Staff", "Event"];
+const pageLinks = ["about", "tuition Fee", "alumni", "faculty Staff", "event"];
 
 const Footer = () => {
   const pathname = usePathname();
@@ -137,11 +137,13 @@ const Footer = () => {
 const FooterList = ({ title, links }: { title: string; links: string[] }) => (
   <div>
     <h3 className="text-lg font-semibold mb-3 underline text-white">{title}</h3>
-    <ul className="space-y-2">
+    <div className="flex flex-col space-y-2 capitalize">
       {links.map((link, idx) => (
-        <li key={idx}>{link}</li>
+        <Link href={link} key={idx}>
+          {link}
+        </Link>
       ))}
-    </ul>
+    </div>
   </div>
 );
 
