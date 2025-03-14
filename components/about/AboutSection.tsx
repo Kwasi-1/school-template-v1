@@ -2,7 +2,7 @@
 
 const AboutSection = () => {
   return (
-    <section className="w-[90%] mx-auto py-12 border-b border-gray-300">
+    <section className="w-[85%] container mx-auto py-12 border-b border-gray-300">
       <div className="grid grid-cols-1 md:grid-cols-[0.5fr_1fr] gap-6 items-center">
         {/* Title */}
         <h2 className="text-3xl font-semibold text-black">About University</h2>
