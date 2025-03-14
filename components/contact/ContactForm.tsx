@@ -24,8 +24,8 @@ const InputField = ({
   placeholder: string;
 }) => (
   <div>
-    <label className="block text-lg font-semibold text-black">
-      {label} <span className="text-red-500">*</span>
+    <label className="block text-base font-semibold text-black">
+      {label} <span className="text-[#890c25]">*</span>
     </label>
     <input
       type={type}
@@ -33,8 +33,10 @@ const InputField = ({
       value={value}
       onChange={onChange}
       placeholder={placeholder}
-      className={`w-full border-2 p-3 rounded-md ${
-        error ? "border-red-500" : "border-gray-300"
+      className={`w-full border py-3 px-[20px] mt-3 ${
+        error
+          ? "border-red-500"
+          : "border-[#ddd] focus:border-[#890c25] outline-0"
       }`}
     />
     {error && (
@@ -62,17 +64,19 @@ const TextareaField = ({
   placeholder: string;
 }) => (
   <div>
-    <label className="block text-lg font-semibold text-black">
-      {label} <span className="text-red-500">*</span>
+    <label className="block text-base font-semibold text-black">
+      {label} <span className="text-[#890c25]">*</span>
     </label>
     <textarea
       name={name}
       value={value}
       onChange={onChange}
       placeholder={placeholder}
-      rows={4}
-      className={`w-full border-2 p-3 rounded-md ${
-        error ? "border-red-500" : "border-gray-300"
+      rows={8}
+      className={`w-full border py-3 px-[20px] mt-3 ${
+        error
+          ? "border-red-500"
+          : "border-[#ddd] focus:border-[#890c25] outline-0"
       }`}
     ></textarea>
     {error && (
@@ -116,7 +120,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="py-16 px-4 md:px-8 w-[85%] container mx-auto">
+    <section className="pb-[120px] px-4 md:px-8 w-[85%] container mx-auto">
       {/* Heading */}
       <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-center text-black mb-12">
         Get in Touch
@@ -155,7 +159,7 @@ const ContactForm = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full bg-maroon text-white text-lg font-semibold py-3 rounded-md flex justify-center items-center gap-2 bg-red-800 hover:bg-black transition duration-300"
+          className="w-full mt-12 bg-maroon text-white text-lg py-3 flex justify-center items-center gap-3 bg-[#890C25] hover:bg-black transition duration-300"
         >
           Send Message
           <Icon icon="mynaui:send-solid" className="text-xl" />
