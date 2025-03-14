@@ -2,88 +2,8 @@
 
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { useState } from "react";
-
-// **Reusable Input Field Component**
-const InputField = ({
-  label,
-  name,
-  type = "text",
-  value,
-  onChange,
-  error,
-  placeholder,
-}: {
-  label: string;
-  name: string;
-  type?: string;
-  value: string;
-  onChange: (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => void;
-  error: boolean;
-  placeholder: string;
-}) => (
-  <div>
-    <label className="block text-base font-semibold text-black">
-      {label} <span className="text-[#890c25]">*</span>
-    </label>
-    <input
-      type={type}
-      name={name}
-      value={value}
-      onChange={onChange}
-      placeholder={placeholder}
-      className={`w-full border py-3 px-[20px] mt-3 ${
-        error
-          ? "border-red-500"
-          : "border-[#ddd] focus:border-[#890c25] outline-0"
-      }`}
-    />
-    {error && (
-      <p className="text-red-500 text-sm mt-1">This field is required.</p>
-    )}
-  </div>
-);
-
-// **Reusable Textarea Field Component**
-const TextareaField = ({
-  label,
-  name,
-  value,
-  onChange,
-  error,
-  placeholder,
-}: {
-  label: string;
-  name: string;
-  value: string;
-  onChange: (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => void;
-  error: boolean;
-  placeholder: string;
-}) => (
-  <div>
-    <label className="block text-base font-semibold text-black">
-      {label} <span className="text-[#890c25]">*</span>
-    </label>
-    <textarea
-      name={name}
-      value={value}
-      onChange={onChange}
-      placeholder={placeholder}
-      rows={8}
-      className={`w-full border py-3 px-[20px] mt-3 ${
-        error
-          ? "border-red-500"
-          : "border-[#ddd] focus:border-[#890c25] outline-0"
-      }`}
-    ></textarea>
-    {error && (
-      <p className="text-red-500 text-sm mt-1">This field is required.</p>
-    )}
-  </div>
-);
+import InputField from "../InputField";
+import TextareaField from "../TextAreaField";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -154,6 +74,7 @@ const ContactForm = () => {
           onChange={handleChange}
           error={errors.message}
           placeholder="Your message"
+          row={8}
         />
 
         {/* Submit Button */}
