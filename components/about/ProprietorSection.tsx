@@ -1,18 +1,24 @@
+"use client";
+
+import Image from "next/image";
+
 const ProprietorSection = () => {
   return (
-    <section className="w-[90%] mx-auto my-16 border border-red-200 rounded-lg p-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+    <section className="w-[85%] mx-auto my-[100px] border border-red-200 rounded-lg p-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 items-center ">
         {/* Image */}
         <div>
-          <img
-            src="/proprietor.jpg"
+          <Image
+            src="/proprietor.webp"
             alt="School Proprietor"
-            className="w-full rounded-lg shadow-lg"
+            className="w-3/4 h-full "
+            width={400}
+            height={400}
           />
         </div>
 
         {/* Text Content */}
-        <div>
+        <div className="lg:-ml-10 w-6/7">
           <h3 className="text-xl font-semibold">Meet Our Proprietor</h3>
           <p className="text-gray-600 mt-4">
             Our esteemed proprietor, <strong>Michael Richard</strong>, is a
@@ -25,11 +31,6 @@ const ProprietorSection = () => {
 
           {/* Proprietor Info */}
           <div className="mt-6 flex items-center gap-4">
-            <img
-              src="/proprietor-avatar.jpg"
-              alt="Proprietor"
-              className="w-12 h-12 rounded-full border-2 border-red-500"
-            />
             <div>
               <h4 className="font-semibold text-lg">Michael Richard</h4>
               <p className="text-sm text-gray-500">Founder & Proprietor</p>
