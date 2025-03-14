@@ -5,7 +5,7 @@ import ContactForm from "@/components/contact/ContactForm";
 
 export default function Contact() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
       <Head>
         <title>Contact Us - Peskab Construction</title>
         <meta
