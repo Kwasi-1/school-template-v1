@@ -1,11 +1,12 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
 import { ChevronDown } from "lucide-react";
+import Image from "next/image";
 
 const menuItems = [
-  { title: "Home", href: "/" },
+  { title: "Home", href: "/#herosection" },
   {
     title: "Pages",
     subItems: [
@@ -34,9 +35,28 @@ const menuItems = [
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState("");
+  const [hasShadow, setHasShadow] = useState(false);
+
+  // Detect scroll to add shadow to navbar
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setHasShadow(true);
+      } else {
+        setHasShadow(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="bg-white fixed w-full z-50 top-0 shadowsm">
+    <nav
+      className={`bg-white fixed w-full z-50 top-0 transition-shadow duration-300 ${
+        hasShadow ? "shadow-xs" : ""
+      }`}
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-lg">
         <div className="flex justify-between items-center h-[100px]">
           {/* Navigation Links (Desktop) */}
@@ -70,7 +90,7 @@ export default function Navbar() {
                 <Link
                   key={index}
                   href={item.href}
-                  className="text-gray-700 font-semibold text-[16px] "
+                  className="text-gray-700 font-semibold text-[16px]"
                 >
                   {item.title}
                 </Link>
@@ -80,15 +100,13 @@ export default function Navbar() {
 
           {/* Logo */}
           <div className="flex items-center bg-black text-red-800">
-            <img
+            <Image
               src="/school_logo.svg"
               alt="Unipix Logo"
               className="h-10 w-auto"
+              width={120}
+              height={40}
             />
-            {/* <h1 className="text-primary font-bold text-xl ml-2">
-              UNIPIX{" "}
-              <span className="block text-xs text-gray-600">UNIVERSITY</span>
-            </h1> */}
           </div>
 
           {/* Right Section - Icons */}
