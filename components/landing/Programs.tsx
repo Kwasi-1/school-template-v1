@@ -35,12 +35,12 @@ const programsRight = [
 
 export default function Programs() {
   return (
-    <section className="container mx-auto px-6 py-20">
+    <section className="container mx-auto">
       <div className="w-[85%] mx-auto px-6 py-[120px] flex flex-col md:flex-row items-center gap-20">
         {/* Left Section - Heading & Text */}
         <div className="md:w-[45%]">
-          <h2 className="text-4xl font-bold">Our Programs</h2>
-          <p className="mt-4 text-gray-600 leading-relaxed">
+          <h2 className="text-5xl">Our Programs</h2>
+          <p className="mt-8 text-[#737477] leading-relaxed">
             Embark on a journey of knowledge, discovery, and growth at Unipix
             University. Our admissions process is designed to identify bright,
             motivated individuals who are eager to contribute to our dynamic
@@ -60,7 +60,7 @@ export default function Programs() {
               <a
                 href="#"
                 className="inline-block bg-[#A41E27] text-white px-6 p-3 text-lg font-medium rounded-full -rotate-52 
-            hover:bg-[#86181F] transition duration-300"
+            hover:bg-black transition duration-300"
               >
                 View All Program →
               </a>

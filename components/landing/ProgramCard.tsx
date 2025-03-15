@@ -33,13 +33,13 @@ export default function ProgramCard({
           {description}
         </div>
 
-        <h3 className="absolute bottom-4 left-4 text-white font-semibold text-base">
+        <p className="absolute bottom-8 left-8 text-white text-base">
           Read more
-        </h3>
+        </p>
       </div>
 
       {/* Title at the Bottom */}
-      <h3 className="absolute bottom-4 left-4 text-white font-semibold text-lg group-hover:hidden transition duration-300">
+      <h3 className="absolute bottom-10 left-10 text-white text-2xl tracking-wide group-hover:hidden transition duration-300 ">
         {title}
       </h3>
     </div>
