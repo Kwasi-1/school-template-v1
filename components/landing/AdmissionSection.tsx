@@ -32,10 +32,7 @@ const AdmissionSection = () => {
 
         {/* Right Side - Application Form */}
         <div className="w-f bg-white p-6 rounded-lg shadow-lg">
-          <h3 className="text-lg font-semibold text-black mb-4">
-            Application Form
-          </h3>
-          <PersonalInfoForm />
+          <PersonalInfoForm title="Application Form" />
         </div>
       </div>
 

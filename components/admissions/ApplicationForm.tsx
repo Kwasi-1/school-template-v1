@@ -7,12 +7,10 @@ const ApplicationFormSection = () => {
     <section className="container py-[120px] w-[85%] mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-20">
       {/* Left: Application Form */}
       <div className="lg:col-span-2">
-        <h2 className="text-[40px] font-semibold text-gray-900 mb-6">
-          Application Details
-        </h2>
+        <h2 className="text-[40px] text-gray-900 mb-6">Application Details</h2>
 
         {/* Personal Information */}
-        <PersonalInfoForm />
+        <PersonalInfoForm title="Personal Information" />
       </div>
 
       {/* Right: Sidebar */}
