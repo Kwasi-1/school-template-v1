@@ -1,20 +1,24 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/Hero";
 import Footer from "@/components/Footer";
 import BackToTopButton from "@/components/BackToTopButton";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Inter as the main font
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// CanelaTrial as the header font (ensure the file exists in /public/fonts/)
+// const headerFont = localFont({
+//   src: "../public/fonts/CanelaTrial.woff2",
+//   variable: "--font-header",
+//   display: "swap",
+// });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,12 +30,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${inter.variable}  antialiased`}>
         <Navbar />
         <div className="mt-[100px]">
-          <HeroSection /> {/* Hero section added here */}
+          <HeroSection />
           <div>{children}</div>
           <Footer />
           <BackToTopButton />
