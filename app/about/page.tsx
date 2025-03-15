@@ -9,12 +9,12 @@ import StatsSection from "@/components/about/StatsSection";
 
 function page() {
   return (
-    <div>
+    <div className="text-[#737477]">
       <AboutSection />
       <HistorySection />
       <StatsSection />
       <MissionValuesSection />
-      <CampusTour />
+      {/* <CampusTour /> */}
       <ProprietorSection />
     </div>
   );
