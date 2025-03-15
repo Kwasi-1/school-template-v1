@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 const images = [
   "/hero_image_1.webp",
@@ -75,9 +76,10 @@ const HeroSection = () => {
         {/* Conditional Heading for Other Pages */}
         {!isLandingPage ? (
           <>
-            <h1 className="text-4xl font-semibold capitalize">{pageName}</h1>
-            <div className="capitalize">
-              <Link href="/">Home</Link> {">"} {pageName}
+            <h1 className="text-5xl capitalize mb-6">{pageName}</h1>
+            <div className="capitalize flex items-center gap-2 text-[#ddd] justify-center">
+              <Link href="/">Home</Link> <Icon icon="oui:arrow-right" />{" "}
+              {pageName}
             </div>
           </>
         ) : (
