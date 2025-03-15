@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/Hero";
 import Footer from "@/components/Footer";
 import BackToTopButton from "@/components/BackToTopButton";
+import { Toaster } from "react-hot-toast";
 
 // Load Inter from Google Fonts (for body text)
 const inter = Inter({
@@ -32,6 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${canelaTrial.variable} antialiased`}>
+        <Toaster position="top-right" />
         <Navbar />
         <div className="mt-[100px]">
           <HeroSection />
