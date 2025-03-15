@@ -1,74 +1,76 @@
 "use client";
 
-import { useState } from "react";
-import { useFormValidation } from "@/hooks/useFormValidation";
 import { PaystackButton } from "react-paystack";
+import { usePaymentFormValidation } from "@/hooks/useFormValidation";
+import { useToast } from "@/hooks/useToast";
 import InputField from "../InputField";
 
+interface PaymentFormData {
+  fullname: string;
+  studentClass: string;
+  email: string;
+  phone: string;
+  amount: number;
+}
+
 const PaymentForm = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useFormValidation();
   const publicKey = "pk_test_xxxxxxxxxxxxxxxxxxxxxx";
+  const toast = useToast();
 
-  const [formData, setFormData] = useState({
-    fullname: "",
-    class: "",
-    email: "",
-    phone: "",
-    amount: Number,
-  });
+  const { register, handleSubmit, watch, errors } = usePaymentFormValidation();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const onSubmit = () => {
+    toast.loading("Processing payment...");
+    setTimeout(() => {
+      toast.dismiss();
+      toast.success("Payment Successful! 🎉");
+    }, 2000);
   };
 
   const paystackConfig = {
-    email: formData.email,
-    amount: 10000,
+    email: watch("email") || "", // Fallback to empty string if undefined
+    amount: (watch("amount") || 0) * 100, // Fallback to 0 if undefined
     publicKey,
-    onSuccess: () => {
-      toast.success("Payment Successful! 🎉");
-    },
-    onClose: () => {
-      toast.error("Payment Cancelled ❌");
-    },
+    onSuccess: () => toast.success("Payment Successful! 🎉"),
+    onClose: () => toast.error("Payment Cancelled ❌"),
   };
 
   return (
-    <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <form
+      className="grid grid-cols-1 md:grid-cols-2 gap-6"
+      onSubmit={handleSubmit(onSubmit)}
+    >
       <InputField
-        label="Student Full Name"
+        label="Full Name"
+        {...register("fullname")}
+        error={errors.fullname?.message?.toString()}
         name="fullname"
-        value={formData.fullname}
-        onChange={handleChange}
       />
       <InputField
         label="Class"
+        {...register("studentClass")}
+        error={errors.studentClass?.message?.toString()}
         name="class"
-        value={formData.class}
-        onChange={handleChange}
       />
       <InputField
         label="Email"
+        {...register("email")}
+        error={errors.email?.message?.toString()}
         name="email"
-        value={formData.email}
-        onChange={handleChange}
       />
       <InputField
         label="Phone Number"
+        type="tel"
+        {...register("phone")}
+        error={errors.phone?.message?.toString()}
         name="phone"
-        value={formData.phone}
-        onChange={handleChange}
       />
       <InputField
         label="Amount"
-        name="amount"
         type="number"
-        value={formData.amount}
-        onChange={handleChange}
+        {...register("amount")}
+        error={errors.amount?.message?.toString()}
+        name="amount"
       />
 
       <div className="col-span-1 md:col-span-2">
