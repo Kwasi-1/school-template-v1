@@ -31,7 +31,7 @@ const CampusContacts = () => {
   return (
     <section className="pb-[100px] container mx-auto px-4 md:px-8">
       <div className="max-w-[85%] mx-auto text-center">
-        <h2 className="text-3xl md:text-5xl font-semibold text-black mb-[50px]">
+        <h2 className="text-3xl md:text-5xl text-black mb-[50px]">
           Other Campus Contacts
         </h2>
 
@@ -50,10 +50,8 @@ const CampusContacts = () => {
               {/* <div className="absolute inset-0 bg-black/10" /> */}
 
               {/* Content */}
-              <div className="relative text-left text-[20px] p-6 md:p-8 lg:p-[50px] lg:pb-[40px] h-full flex flex-col gap-4 justify-start leading-[28.8px] font-semibold">
-                <h3 className="text-[40px] font-semibold font-headerFont">
-                  {campus.city}
-                </h3>
+              <div className="relative text-left text-[20px] p-6 md:p-8 lg:p-[50px] lg:pb-[40px] h-full flex flex-col gap-4 justify-start leading-[28.8px]">
+                <h3 className="text-[40px]">{campus.city}</h3>
                 <p className=" my-2">{campus.address}</p>
                 <p className=" mt-2">{campus.phone}</p>
                 <p className="">{campus.email}</p>
