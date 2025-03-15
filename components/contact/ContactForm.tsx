@@ -42,7 +42,7 @@ const ContactForm = () => {
   return (
     <section className="pb-[120px] px-4 md:px-8 w-[85%] container mx-auto">
       {/* Heading */}
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-center text-black mb-12">
+      <h2 className="text-3xl md:text-4xl lg:text-5xl text-center text-black mb-12">
         Get in Touch
       </h2>
 
