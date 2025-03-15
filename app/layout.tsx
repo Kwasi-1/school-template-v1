@@ -7,18 +7,19 @@ import HeroSection from "@/components/Hero";
 import Footer from "@/components/Footer";
 import BackToTopButton from "@/components/BackToTopButton";
 
-// Inter as the main font
+// Load Inter from Google Fonts (for body text)
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
 });
 
-// CanelaTrial as the header font (ensure the file exists in /public/fonts/)
-// const headerFont = localFont({
-//   src: "../public/fonts/CanelaTrial.woff2",
-//   variable: "--font-header",
-//   display: "swap",
-// });
+// Load CanelaTrial as a Local Font
+
+const canelaTrial = localFont({
+  src: "../public/fonts/Canela-Regular-Trial.woff2", // Path to font file
+  variable: "--font-header",
+  display: "swap", // Prevents layout shift
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -30,7 +31,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable}  antialiased`}>
+      <body className={`${inter.variable} ${canelaTrial.variable} antialiased`}>
         <Navbar />
         <div className="mt-[100px]">
           <HeroSection />
