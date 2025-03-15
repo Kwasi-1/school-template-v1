@@ -15,14 +15,7 @@ const contactDetails = [
   },
 ];
 
-const ContactCard = ({
-  alt,
-  info,
-}: {
-  icon: string;
-  alt: string;
-  info: string[];
-}) => (
+const ContactCard = ({ alt, info }: { alt: string; info: string[] }) => (
   <div className="bg-gray-100 px-8 py-12 flex flex-col items-center text-center">
     {alt === "Clock" && (
       <svg
@@ -118,7 +111,7 @@ const ContactSection = () => {
   return (
     <section className="pt-[120px] pb-[100px] container mx-auto px-4 md:px-8">
       <div className="max-w-[85%] mx-auto text-center">
-        <h2 className="text-3xl md:text-5xl font-semibold text-black mb-12">
+        <h2 className="text-3xl md:text-5xl text-black mb-12">
           General Contact Information
         </h2>
 
