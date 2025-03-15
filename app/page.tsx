@@ -1,7 +1,7 @@
 "use client";
 
 import AboutUs from "@/components/landing/AboutUs";
-import AdmissionForm from "@/components/landing/AdmissionForm";
+import AdmissionSection from "@/components/landing/AdmissionSection";
 import Programs from "@/components/landing/Programs";
 import TuitionFees from "@/components/landing/TuitionFees";
 import UpcomingEvents from "@/components/landing/UpcomingEvents";
@@ -24,7 +24,7 @@ export default function Home() {
       <AboutUs />
       <TuitionFees />
 
-      {/* <AdmissionForm /> */}
+      <AdmissionSection />
 
       <UpcomingEvents />
     </div>
