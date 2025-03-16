@@ -1,19 +1,35 @@
-import type { Metadata } from "next";
-// import "@/styles/globals.css";
+"use client";
+import { useEffect, useState } from "react";
+import { auth } from "@/lib/firebase";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { useRouter } from "next/navigation";
 import Sidebar from "@/components/admin/Sidebar";
 
-export const metadata: Metadata = {
-  title: "School Admin Dashboard",
-  description: "Manage student fees and payments.",
-};
+export default function Layout({ children }: { children: React.ReactNode }) {
+  const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState(null);
+  const router = useRouter();
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <body className="flex bg-gray-100">
-        <Sidebar />
-        <main className="flex-1 p-6">{children}</main>
-      </body>
-    </html>
-  );
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        router.push("/login");
+      } else {
+        setUser(user);
+      }
+      setLoading(false);
+    });
+  }, [router]);
+
+  if (loading) return <p>Loading...</p>;
+
+  return user ? (
+    <div className="flex">
+      <Sidebar />
+      <main className="flex-1 p-6">{children}</main>
+      <button onClick={() => signOut(auth)} className="absolute top-4 right-4 bg-red-500 text-white p-2 rounded">
+        Logout
+      </button>
+    </div>
+  ) : null;
 }
