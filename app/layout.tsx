@@ -2,24 +2,20 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/Hero";
-import Footer from "@/components/Footer";
-import BackToTopButton from "@/components/BackToTopButton";
 import { Toaster } from "react-hot-toast";
+import LayoutWrapper from "@/components/LayoutWrapper";
 
-// Load Inter from Google Fonts (for body text)
+// Load Inter from Google Fonts
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
 });
 
 // Load CanelaTrial as a Local Font
-
 const canelaTrial = localFont({
-  src: "../public/fonts/Canela-Regular-Trial.woff2", // Path to font file
+  src: "../public/fonts/Canela-Regular-Trial.woff2",
   variable: "--font-header",
-  display: "swap", // Prevents layout shift
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -34,13 +30,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${canelaTrial.variable} antialiased`}>
         <Toaster position="top-right" />
-        <Navbar />
-        <div className="mt-[100px]">
-          <HeroSection />
-          <div>{children}</div>
-          <Footer />
-          <BackToTopButton />
-        </div>
+        <LayoutWrapper>{children}</LayoutWrapper>
       </body>
     </html>
   );
