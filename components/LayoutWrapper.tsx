@@ -12,12 +12,13 @@ export default function LayoutWrapper({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const isAdminPage = pathname.startsWith("/admin");
+  const isAdminPage =
+    pathname.startsWith("/admin") || pathname.startsWith("/login");
 
   return (
     <>
       {!isAdminPage && <Navbar />}
-      <div className={` ${!isAdminPage && "mt-[100px]" }`}>
+      <div className={` ${!isAdminPage && "mt-[100px]"}`}>
         {!isAdminPage && <HeroSection />}
         {children}
         {!isAdminPage && <Footer />}
