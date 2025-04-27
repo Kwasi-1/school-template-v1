@@ -95,7 +95,7 @@ const HeroSection = () => {
             </div>
 
             {/* Main Heading */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl leading-tight">
               Academic Journey <br /> Begins Unipix
             </h1>
 
