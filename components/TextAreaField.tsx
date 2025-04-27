@@ -20,7 +20,7 @@ const TextareaField = ({
   row: number;
 }) => (
   <div>
-    <label className="block text-base font-semibold text-black">
+    <label className="block text-sm font-semibold text-black">
       {label} <span className="text-[#890c25]">*</span>
     </label>
     <textarea

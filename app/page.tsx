@@ -24,7 +24,7 @@ export default function Home() {
       <AboutUs />
       <TuitionFees />
 
-      <AdmissionSection />
+      {/* <AdmissionSection /> */}
 
       <UpcomingEvents />
     </div>

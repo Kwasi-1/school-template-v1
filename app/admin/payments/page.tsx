@@ -32,8 +32,16 @@ export default function Payments() {
             <tr key={payment.id} className="border">
               <td className="p-2">{payment.student_id}</td>
               <td className="p-2 text-green-500">GHS {payment.amount_paid}</td>
-              <td className="p-2">{new Date(payment.payment_date).toLocaleDateString()}</td>
-              <td className={`p-2 ${payment.status === "Successful" ? "text-green-600" : "text-yellow-600"}`}>
+              <td className="p-2">
+                {new Date(payment.payment_date).toLocaleDateString()}
+              </td>
+              <td
+                className={`p-2 ${
+                  payment.status === "Successful"
+                    ? "text-green-600"
+                    : "text-yellow-600"
+                }`}
+              >
                 {payment.status}
               </td>
             </tr>

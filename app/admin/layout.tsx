@@ -27,7 +27,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <div className="flex">
       <Sidebar />
       <main className="flex-1 p-6">{children}</main>
-      <button onClick={() => signOut(auth)} className="absolute top-4 right-4 bg-red-500 text-white p-2 rounded">
+      <button
+        onClick={() => signOut(auth)}
+        className="absolute top-4 right-4 bg-red-500 text-white p-2 rounded"
+      >
         Logout
       </button>
     </div>

@@ -1,3 +1,5 @@
+"use client"
+
 const CampusTour = () => {
   return (
     <section className="text-center py-16 px-4">

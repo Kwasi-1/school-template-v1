@@ -12,26 +12,49 @@ const PersonalInfoForm = ({ title }: PersonalInfoFormProps) => {
   const toast = useToast();
   const { register, handleSubmit, watch, errors } = useAdmissionValidation();
 
-  const onSubmit = (data: any) => {
+  const onSubmit = async (data: any) => {
+    console.log("Form data submitted:", data); // Debugging
     toast.loading("Submitting admission form...");
 
-    setTimeout(() => {
+    try {
+      const response = await fetch("/api/sendEmail", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+      console.log("API response:", result); // Debugging
+
       toast.dismiss();
-      toast.success("Admission Form Submitted Successfully! 🎉");
-      console.log("Submitted Data:", data); // Log form data (optional)
-    }, 2000);
+
+      if (response.ok) {
+        toast.success("Admission Form Submitted Successfully! 🎉");
+      } else {
+        toast.error("Failed to submit. Please try again.");
+      }
+    } catch (error) {
+      toast.dismiss();
+      toast.error("Something went wrong. Please check the logs.");
+      console.error("Submission Error:", error);
+    }
   };
 
   return (
     <section className="container mx-auto">
-      {/* Heading */}
-      <h2 className="text-2xl text-black mb-6 capitalize tracking-wide">{title}</h2>
+      <h2 className="text-2xl text-black mb-6 capitalize tracking-wide">
+        {title}
+      </h2>
 
-      {/* Form */}
       <form
-        onSubmit={handleSubmit(onSubmit)}
+        onSubmit={(e) => {
+          e.preventDefault();
+          console.log("🚀 Form submitted!");
+          handleSubmit(onSubmit)(e);
+        }}
         className="grid grid-cols-1 md:grid-cols-2 gap-8"
       >
+        {/* Form fields */}
         <InputField
           label="First Name"
           {...register("firstName")}
@@ -88,7 +111,7 @@ const PersonalInfoForm = ({ title }: PersonalInfoFormProps) => {
 
         <InputField
           label="Class Name"
-          {...register("className")}
+          {...register("studentClass")}
           error={errors.className?.message?.toString()}
         />
 

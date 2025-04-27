@@ -29,6 +29,8 @@ export const admissionFormSchema = baseSchema.extend({
   country: z.string().min(2, "Country name must be at least 2 characters").optional(),
   dob: z.string().min(10, "Date of birth is required"),
   comments: z.string().optional(),
+  parentName: z.string().min(2, "Full name is required"),
+  studentClass: z.string().min(1, "Class is required"),
   gender: z.enum(["male", "female"]),
 });
 
@@ -52,6 +54,8 @@ export const useAdmissionValidation = () => {
     address: "",
     country: "",
     dob: "",
+    studentClass: "",
+    parentName: "",
     comments: "",
     gender: "male", // Default to one of the enum values
   });

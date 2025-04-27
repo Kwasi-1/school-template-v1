@@ -4,11 +4,11 @@
 
 export default function TuitionFees() {
   return (
-    <section className="relative pt-[100px] pb-[120px] px-6 md:px-20 ">
-      <div className="w-[92%] mx-auto flex flex-col md:flex-row items-center gap-6 container">
+    <section className="relative pt-[100px] pb-[120px] px-6 md:px-20 leading-loose ">
+      <div className="w-[92%] mx-auto flex flex-col md:flex-row items-center gap-8 container">
         {/* Title Section */}
-        <div className="max-w-3xl">
-          <h2 className="text-5xl font-bold leading-tight">
+        <div className="max-w-3xl flex-1">
+          <h2 className="text-5xl leading-tight">
             Tuition Fees At <br /> Unipix University
           </h2>
           <p className="text-gray-500 mt-4 text-lg">
@@ -23,8 +23,8 @@ export default function TuitionFees() {
 
         {/* Tuition Cards */}
         {/* Undergraduate Programs */}
-        <div className="bg-[#800020] text-white rounded-[10px] p-[40px] md:w-1/2">
-          <h3 className="text-2xl font-semibold">Undergraduate Programs</h3>
+        <div className="flex-1 bg-[#800020] text-white rounded-[10px] p-[40px] md:w-1/2">
+          <h3 className="text-3xl">Undergraduate Programs</h3>
 
           <div className="mt-4">
             <h4 className="font-semibold underline">
@@ -46,8 +46,8 @@ export default function TuitionFees() {
         </div>
 
         {/* Graduate Programs */}
-        <div className="bg-gray-100 text-black rounded-[10px] p-[40px] md:w-1/2">
-          <h3 className="text-2xl font-semibold">Graduate Programs</h3>
+        <div className="flex-1 bg-gray-100 text-black rounded-[10px] p-[40px] md:w-1/2">
+          <h3 className="text-3xl ">Graduate Programs</h3>
 
           <div className="mt-4">
             <h4 className="font-semibold">Graduate School/Department</h4>

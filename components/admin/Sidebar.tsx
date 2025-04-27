@@ -1,42 +1,37 @@
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const menuItems = [
+  { name: "Dashboard", path: "/admin" },
+  { name: "Students", path: "/admin/students" },
+  { name: "Payments", path: "/admin/payments" },
+  { name: "Reminders", path: "/admin/reminders" },
+];
 
 export default function Sidebar() {
+  const pathname = usePathname();
+
   return (
-    <div className="w-64 bg-white shadow-md min-h-screen p-4">
+    <aside className="w-64 bg-white shadow-md min-h-screen p-4">
       <h2 className="text-xl font-bold text-center mb-4">Admin Panel</h2>
       <nav>
         <ul className="space-y-2">
-          <li>
-            <Link href="/" className="block p-2 rounded hover:bg-gray-200">
-              Dashboard
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/students"
-              className="block p-2 rounded hover:bg-gray-200"
-            >
-              Students
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/payments"
-              className="block p-2 rounded hover:bg-gray-200"
-            >
-              Payments
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/reminders"
-              className="block p-2 rounded hover:bg-gray-200"
-            >
-              Reminders
-            </Link>
-          </li>
+          {menuItems.map(({ name, path }) => (
+            <li key={path}>
+              <Link
+                href={path}
+                className={`block p-2 rounded transition ${
+                  pathname === path
+                    ? "bg-gray-300 font-semibold"
+                    : "hover:bg-gray-200"
+                }`}
+              >
+                {name}
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
-    </div>
+    </aside>
   );
 }

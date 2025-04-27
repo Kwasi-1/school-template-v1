@@ -29,6 +29,7 @@ const menuItems = [
       { title: "Events", href: "/blog/events" },
     ],
   },
+  { title: "Fees", href: "/fees" },
   { title: "Contact", href: "/contact" },
 ];
 
