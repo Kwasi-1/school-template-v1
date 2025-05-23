@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
@@ -61,7 +62,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-lg">
         <div className="flex justify-between items-center h-[100px]">
           {/* Navigation Links (Desktop) */}
-          <div className="hidden md:flex space-x-6 text-[15px]">
+          <div className="hidden md:flex space-x-6 text-[15px] font-[500]">
             {menuItems.map((item, index) =>
               item.subItems ? (
                 <div
@@ -70,16 +71,16 @@ export default function Navbar() {
                   onMouseEnter={() => setDropdownOpen(item.title)}
                   onMouseLeave={() => setDropdownOpen("")}
                 >
-                  <button className="text-gray-700 text-[16px] font-semibold flex items-center gap-1">
+                  <button className="text-gray-700 text-[16px] flex items-center gap-1">
                     {item.title} <ChevronDown size={16} />
                   </button>
                   {dropdownOpen === item.title && (
-                    <div className="absolute top-full left-0 bg-white shadow-md border rounded-md py-2 w-40">
+                    <div className="absolute top-full left-0 bg-white w-48 rounded pt-9 -ml-5 font-[400] py-2">
                       {item.subItems.map((subItem, subIndex) => (
                         <Link
                           key={subIndex}
                           href={subItem.href}
-                          className="block px-4 py-2 hover:bg-gray-100"
+                          className="block px-5 py-2 hover:bg-gray-100"
                         >
                           {subItem.title}
                         </Link>
@@ -91,7 +92,7 @@ export default function Navbar() {
                 <Link
                   key={index}
                   href={item.href}
-                  className="text-gray-700 font-semibold text-[16px]"
+                  className="text-gray-700 text-[16px]"
                 >
                   {item.title}
                 </Link>

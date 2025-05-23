@@ -6,10 +6,10 @@ export default function AboutUs() {
   return (
     <section className="relative w-full h-full py-10">
       {/* Background Section */}
-      <div className=" text-white bg-[#800020] h-[450px]">
-        <div className="relative  w-[92%] mx-auto py-20 px-10 md:px-20 flex flex-col md:flex-row justify-center container">
+      <div className=" text-white bg-[#890c25] h-[500px]">
+        <div className="relative  w-[92%] mx-auto py-20 md:py-28 px-10 md:px-20 flex flex-col md:flex-row justify-center container">
           {/* Left Side - Text Content */}
-          <div className="md:w-1/2 space-y-6">
+          <div className="md:w-3/7 space-y-6">
             <h2 className="text-4xl md:text-5xl font-bold leading-tight">
               <span className="relative">
                 Embark on a Journey: <br /> Unveiling the Story of{" "}
@@ -26,8 +26,8 @@ export default function AboutUs() {
           </div>
 
           {/* Right Side - Image */}
-          <div className="md:w-1/2 relative mt-10 md:mt-0">
-            <p className="text-lg leading-relaxed">
+          <div className="md:w-4/7 relative mt-10 ml-10 md:mt-0">
+            <p className="text-[17px] leading-relaxed">
               Embark on a journey of knowledge, discovery, and growth at Unipix
               University. Our admissions process is designed to identify bright,
               motivated individuals who are eager to contribute to our dynamic
@@ -47,7 +47,7 @@ export default function AboutUs() {
       </div>
 
       {/* Bottom Overlapping Section */}
-      <div className=" w-full text-gray-300 text-6xl md:text-8xl font-bold px-10 md:px-20">
+      <div className=" w-full text-gray-300 text-6xl md:text-8xl font-bold px-10 md:px-20 leading-tight tracking-tight -ml-10">
         About University
       </div>
     </section>
