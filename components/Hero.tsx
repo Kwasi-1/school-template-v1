@@ -8,8 +8,8 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 
 const images = [
   "/hero_image_1.webp",
-  "/hero_image_1.webp",
-  "/hero_image_1.webp",
+  "/hero_image_2.webp",
+  "/hero_image_3.webp",
 ];
 
 const HeroSection = () => {
@@ -68,7 +68,7 @@ const HeroSection = () => {
             ))}
           </>
         )}
-        <div className="absolute inset-0 bg-black/35"></div>
+        <div className="absolute inset-0 bg-black/50"></div>
       </div>
 
       {/* Content */}
@@ -95,12 +95,12 @@ const HeroSection = () => {
             </div>
 
             {/* Main Heading */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl leading-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-[80px] leading-tight">
               Academic Journey <br /> Begins Unipix
             </h1>
 
             {/* Subtext */}
-            <p className="mt-4 text-lg text-gray-200">
+            <p className="mt-4 text-lg text-gray-200 max-w-xl">
               Remember to tailor the section names to fit the specific needs and
               structure of your university website.
             </p>
