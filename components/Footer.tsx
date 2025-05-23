@@ -15,7 +15,7 @@ const socialLinks = [
 const campusLinks = [
   "academic",
   "athletics",
-  "aampus Life",
+  "campus Life",
   "research",
   "academic Area",
 ];
