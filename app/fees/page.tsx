@@ -1,10 +1,12 @@
+"use client";
+
 import PaymentForm from "@/components/fees/PaymentForm";
 
-function page() {
+function Page() {
   return (
     <div>
       <PaymentForm />
     </div>
   );
 }
-export default page;
+export default Page;
