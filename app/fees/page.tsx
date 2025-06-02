@@ -1,11 +1,9 @@
 "use client";
 
-import PaymentForm from "@/components/fees/PaymentForm";
-
 function Page() {
   return (
     <div>
-      <PaymentForm />
+      <h1>Fees Page</h1>
     </div>
   );
 }
