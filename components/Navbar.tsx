@@ -3,8 +3,14 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Menu } from "lucide-react";
 import Image from "next/image";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetHeader,
+} from "@/components/ui/sheet";
 
 const menuItems = [
   { title: "Home", href: "/#herosection" },
@@ -35,20 +41,13 @@ const menuItems = [
 ];
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState("");
   const [hasShadow, setHasShadow] = useState(false);
 
-  // Detect scroll to add shadow to navbar
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setHasShadow(true);
-      } else {
-        setHasShadow(false);
-      }
+      setHasShadow(window.scrollY > 10);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -59,10 +58,87 @@ export default function Navbar() {
         hasShadow ? "shadow-xs" : ""
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-lg">
+      <div className="container-lg mx-auto px-4 sm:px-6 lg:px-8 text-lg">
         <div className="flex justify-between items-center h-[100px]">
-          {/* Navigation Links (Desktop) */}
-          <div className="hidden md:flex space-x-6 text-[15px] font-[500]">
+          {/* Mobile Menu Button */}
+          <div className="lg:hidden">
+            <Sheet>
+              <SheetTrigger asChild>
+                <button>
+                  <Menu size={28} />
+                </button>
+              </SheetTrigger>
+              <SheetContent side="left" className="bg-white">
+                <SheetHeader className="mb-4 bg-black/5">
+                  <Image
+                    src="/school_logo.svg"
+                    alt="Unipix Logo"
+                    width={120}
+                    height={40}
+                  />
+                </SheetHeader>
+                <nav className="flex flex-col space-y-3 px-6">
+                  {menuItems.map((item, index) =>
+                    item.subItems ? (
+                      <div key={index}>
+                        <button
+                          onClick={() =>
+                            setDropdownOpen(
+                              dropdownOpen === item.title ? "" : item.title
+                            )
+                          }
+                          className="flex justify-between w-full text-left font-medium text-gray-800"
+                        >
+                          {item.title}
+                          <ChevronDown
+                            className={`transform transition-transform ${
+                              dropdownOpen === item.title ? "rotate-180" : ""
+                            }`}
+                            size={16}
+                          />
+                        </button>
+                        {dropdownOpen === item.title && (
+                          <div className="pl-4 mt-1 space-y-1">
+                            {item.subItems.map((subItem, subIdx) => (
+                              <Link
+                                key={subIdx}
+                                href={subItem.href}
+                                className="block text-sm text-gray-700 hover:underline"
+                              >
+                                {subItem.title}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ) : (
+                      <Link
+                        key={index}
+                        href={item.href}
+                        className="text-gray-800 font-medium"
+                      >
+                        {item.title}
+                      </Link>
+                    )
+                  )}
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </div>
+
+          {/* Logo */}
+          <div className="flex items-center">
+            <Image
+              src="/school_logo.svg"
+              alt="Unipix Logo"
+              width={120}
+              height={40}
+              className="h-10 w-auto"
+            />
+          </div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex space-x-6 text-[15px] font-[500]">
             {menuItems.map((item, index) =>
               item.subItems ? (
                 <div
@@ -75,7 +151,7 @@ export default function Navbar() {
                     {item.title} <ChevronDown size={16} />
                   </button>
                   {dropdownOpen === item.title && (
-                    <div className="absolute top-full left-0 bg-white w-48 rounded pt-9 -ml-5 font-[400] py-2">
+                    <div className="absolute top-full left-0 bg-white w-48 rounded pt-9 -ml-5 font-[400] py-2 shadow-md z-20 mt-9">
                       {item.subItems.map((subItem, subIndex) => (
                         <Link
                           key={subIndex}
@@ -100,19 +176,8 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* Logo */}
-          <div className="flex items-center bg-black text-red-800">
-            <Image
-              src="/school_logo.svg"
-              alt="Unipix Logo"
-              className="h-10 w-auto"
-              width={120}
-              height={40}
-            />
-          </div>
-
-          {/* Right Section - Icons */}
-          <div className="flex items-center space-x-4">
+          {/* Right Section */}
+          <div className="hidden md:flex items-center space-x-4">
             <Icon
               icon="ph:magnifying-glass"
               className="text-dark cursor-pointer"
@@ -123,15 +188,15 @@ export default function Navbar() {
               <span>ENG</span>
               <Icon icon="mdi:web" width="18" />
             </div>
-            <div className="border-l border-gray-300 h-5"></div>
-            <div className="flex space-x-3 text-gray-400">
+            <div className="border-l border-gray-300 h-5 hidden 2xl:flex"></div>
+            <div className="space-x-3 text-gray-400 hidden 2xl:flex">
               {[
                 "ic:sharp-facebook",
                 "mdi:instagram",
                 "uil:linkedin",
                 "iconoir:youtube-solid",
               ].map((icon, idx) => (
-                <Link key={idx} href={"#"}>
+                <Link key={idx} href="#">
                   <Icon
                     icon={icon}
                     className="hover:text-primary cursor-pointer"
@@ -142,46 +207,6 @@ export default function Navbar() {
             </div>
           </div>
         </div>
-
-        {/* Mobile Menu */}
-        {menuOpen && (
-          <div className="md:hidden flex flex-col bg-white p-4 border-t">
-            {menuItems.map((item, index) =>
-              item.subItems ? (
-                <div key={index} className="py-2">
-                  <button
-                    className="flex items-center justify-between w-full text-dark font-medium"
-                    onClick={() =>
-                      setDropdownOpen(
-                        dropdownOpen === item.title ? "" : item.title
-                      )
-                    }
-                  >
-                    {item.title}
-                    <ChevronDown size={16} />
-                  </button>
-                  {dropdownOpen === item.title && (
-                    <div className="mt-2 space-y-1 pl-4">
-                      {item.subItems.map((subItem, subIndex) => (
-                        <Link
-                          key={subIndex}
-                          href={subItem.href}
-                          className="block text-gray-700 py-1"
-                        >
-                          {subItem.title}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ) : (
-                <Link key={index} href={item.href} className="py-2 text-dark">
-                  {item.title}
-                </Link>
-              )
-            )}
-          </div>
-        )}
       </div>
     </nav>
   );
