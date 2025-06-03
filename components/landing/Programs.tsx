@@ -35,12 +35,14 @@ const programsRight = [
 
 export default function Programs() {
   return (
-    <section className="container mx-auto">
-      <div className="w-[85%] mx-auto px-6 py-[120px] flex flex-col md:flex-row items-center gap-20">
+    <section className="container-lg mx-auto">
+      <div className="xl:w-[85%] mx-auto px-5 py-16 md:py-[120px] flex flex-col md:flex-row items-center gap-x-6 gap-y-12 lg:gap-20">
         {/* Left Section - Heading & Text */}
-        <div className="md:w-[45%]">
-          <h2 className="text-5xl">Our Programs</h2>
-          <p className="mt-8 text-[#737477] leading-relaxed">
+        <div className="md:w-[45%] w-full">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-normal">
+            Our Programs
+          </h2>
+          <p className="mt-6 text-[#737477] leading-relaxed text-base">
             Embark on a journey of knowledge, discovery, and growth at Unipix
             University. Our admissions process is designed to identify bright,
             motivated individuals who are eager to contribute to our dynamic
@@ -48,49 +50,35 @@ export default function Programs() {
           </p>
 
           {/* Curved Arrow + View Button */}
-          <div className="relative mt-10 flex pt-[60px] pl-[100px] items-center ">
+          <div className="relative mt-10 flex flex-row justify-between md:justify-normal lg:pt-[60px] lg:pl-[100px] items-center">
             <Image
               src="/arrow.webp"
               alt="Arrow"
               width={120}
               height={120}
-              className=""
+              className="w-[100px] sm:w-[150px] md:w-[120px]"
             />
-            <div className="pt-10 ">
-              <a
-                href="#"
-                className="inline-block bg-[#A41E27] text-white px-6 p-3 text-lg font-medium rounded-full -rotate-52 
-            hover:bg-black transition duration-300"
-              >
-                View All Program →
-              </a>
-            </div>
+            <a
+              href="#"
+              className="block bg-[#A41E27] text-white px-6 py-3 mt-14 text-base sm:text-lg font-medium rounded-full -rotate-52 hover:bg-black transition duration-300"
+            >
+              View All Program →
+            </a>
           </div>
         </div>
 
         {/* Right Section - Program Cards Grid */}
-        <div className="md:w-[50%] grid grid-cols-2 gap-8 mt-10 md:mt-0">
+        <div className="lg:w-[50%] w-full grid grid-cols-1 md:grid-cols-2 gap-5 xl:gap-8 mt-6 md:mt-0">
           {/* Left Column */}
-
           <div className="flex flex-col gap-6">
             {programsLeft.map((program, index) => (
-              // <div
-              //   key={index}
-              //   className="relative rounded-lg max-w-[300px] max-h-[300] group overflow-hidden"
-              // >
-
               <ProgramCard key={index} {...program} />
             ))}
           </div>
 
           {/* Right Column */}
-          <div className="flex flex-col gap-8 mt-20">
+          <div className="flex flex-col gap-6 md:mt-20">
             {programsRight.map((program, index) => (
-              // <div
-              //   key={index}
-              //   className="relative rounded-lg max-w-[300px] max-h-[300] group overflow-hidden"
-              // >
-
               <ProgramCard key={index} {...program} />
             ))}
           </div>

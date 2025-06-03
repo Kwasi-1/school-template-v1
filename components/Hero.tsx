@@ -29,8 +29,8 @@ const HeroSection = () => {
   // Conditional Styles
   const isLandingPage = pathname === "/";
   const containerClasses = isLandingPage
-    ? "w-full container mx-auto h-full py-[120px] "
-    : "h-[60vh]";
+    ? "w-full container-lg mx-auto max-h-[600px] lg:max-h-[800px] h-full py-[80px] px-4 sm:px-6 md:px-12 lg:px-16 xl:px-0"
+    : "h-[60vh] px-4 sm:px-6 md:px-12";
 
   return (
     <section
@@ -91,16 +91,17 @@ const HeroSection = () => {
                 alt="Icon"
                 width={150}
                 height={150}
+                className="w-[12vw] xl:w-[150px] h-auto"
               />
             </div>
 
             {/* Main Heading */}
-            <h1 className="text-5xl md:text-6xl lg:text-[80px] leading-tight">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[80px] leading-tight">
               Academic Journey <br /> Begins Unipix
             </h1>
 
             {/* Subtext */}
-            <p className="mt-4 text-lg text-gray-200 max-w-xl">
+            <p className="mt-4 text-sm sm:text-base lg:text-lg  text-gray-200 max-w-xl">
               Remember to tailor the section names to fit the specific needs and
               structure of your university website.
             </p>

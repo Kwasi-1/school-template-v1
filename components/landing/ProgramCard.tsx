@@ -14,7 +14,7 @@ export default function ProgramCard({
   image,
 }: ProgramCardProps) {
   return (
-    <div className="relative rounded-lg max-w-[300px] max-h-[360px] h-[300px]  group overflow-hidden">
+    <div className="relative rounded-lg w-full h-[280px] md::max-w-[300px] sm:h-[300px] group overflow-hidden">
       {/* Background Image */}
       <Image
         src={image}
@@ -25,11 +25,11 @@ export default function ProgramCard({
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition duration-300"></div>
+      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition duration-300" />
 
-      <div className=" hidden group-hover:block transition duration-300 pb-[36px] px-[28px] pt-[40px]">
+      <div className="hidden group-hover:block transition duration-300 pb-[36px] px-[20px] pt-[40px]">
         {/* Description at the Top */}
-        <div className="absolute top-4 left-4 right-4 text-white p-2 text-sm rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="absolute top-4 left-4 right-4 text-white text-sm rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           {description}
         </div>
 
@@ -39,7 +39,7 @@ export default function ProgramCard({
       </div>
 
       {/* Title at the Bottom */}
-      <h3 className="absolute bottom-10 left-10 text-white text-2xl tracking-wide group-hover:hidden transition duration-300 ">
+      <h3 className="absolute bottom-10 left-10 text-white text-xl sm:text-2xl tracking-wide group-hover:hidden transition duration-300">
         {title}
       </h3>
     </div>

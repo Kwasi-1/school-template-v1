@@ -6,7 +6,28 @@
 /* a:hover{
   color: rgb(143, 9, 9);
 } */
-
+.container-lg {
+  width: 100%;
+  max-width: 1440px;
+  @media (width >= 40rem /* 640px */) {
+    max-width: 1440px /* keeping 1440px instead of 640px */;
+  }
+  @media (width >= 48rem /* 768px */) {
+    max-width: 1440px /* keeping 1440px instead of 768px */;
+  }
+  @media (width >= 64rem /* 1024px */) {
+    max-width: 1440px /* keeping 1440px instead of 1024px */;
+  }
+  @media (width >= 80rem /* 1280px */) {
+    max-width: 112rem /* keeping 112rem instead of 1280px */;
+  }
+  @media (width >= 96rem /* 1536px */) {
+    max-width: 96rem /* keeping 96rem instead of 1536px */;
+  }
+  @media (width >= 112rem /* 1792px */) {
+    max-width: 96rem /* keeping 100rem instead of 1792px */;
+  }
+}
 
 
 body {

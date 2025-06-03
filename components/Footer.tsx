@@ -28,9 +28,9 @@ const Footer = () => {
   return (
     <div className="bg-gray-100">
       {isLandingPage && (
-        <div className="relative container mx-auto">
+        <div className="relative container-lg mx-auto px-4">
           <div
-            className="relative flex flex-col md:flex-row justify-between items-center md:w-11/12 lg:w-4/5 py-8 md:py-12 px-16 rounded-lg mx-4 md:mx-auto text-white mb-8 top-16 md:top-24"
+            className="relative flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 lg:gap-12 w-full lg:w-4/5 py-10 lg:py-16 px-6 md:px-10 rounded-lg mx-auto text-white mb-8 top-16 md:top-24"
             style={{
               backgroundImage: "url('footer_image.webp')",
               backgroundSize: "cover",
@@ -38,18 +38,22 @@ const Footer = () => {
               backgroundBlendMode: "multiply",
             }}
           >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold">
-              Don’t Miss Awesome Story <br /> From Our Alumni
+            {/* Heading */}
+            <h2 className="text-2xl md:text-3xl lg:text-4xl leading-snug lg:leading-snug">
+              Don’t Miss Awesome Story <br className="hidden md:block" /> From
+              Our Alumni
             </h2>
-            <div className="flex items-center">
-              <div className="bg-transparent border border-white rounded-full px-4 py-4 mt-4 md:mt-0">
+
+            {/* Input + Button */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full max-w-md">
+              <div className="bg-transparent border border-white rounded-full px-4 py-3 w-full">
                 <input
                   type="email"
-                  placeholder="Enter Your mail"
-                  className="bg-transparent text-white placeholder-white outline-none px-2 w-48 md:w-60"
+                  placeholder="Enter your mail"
+                  className="bg-transparent text-white placeholder-white outline-none w-full"
                 />
               </div>
-              <button className="bg-white hover:bg-black text-red-800 hover:text-white font-semibold px-7 py-4 rounded-full ml-2 flex items-center transition duration-300">
+              <button className="bg-white hover:bg-black text-red-800 hover:text-white font-semibold px-6 py-3 rounded-full flex items-center justify-center transition duration-300 w-full sm:w-auto">
                 Subscribe
                 <Icon icon="mdi:arrow-right" className="text-xl ml-2" />
               </button>
