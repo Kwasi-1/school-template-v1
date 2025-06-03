@@ -151,16 +151,18 @@ export default function Navbar() {
                     {item.title} <ChevronDown size={16} />
                   </button>
                   {dropdownOpen === item.title && (
-                    <div className="absolute top-full left-0 bg-white w-48 rounded pt-9 -ml-5 font-[400] py-2 shadow-md z-20 mt-9">
-                      {item.subItems.map((subItem, subIndex) => (
-                        <Link
-                          key={subIndex}
-                          href={subItem.href}
-                          className="block px-5 py-2 hover:bg-gray-100"
-                        >
-                          {subItem.title}
-                        </Link>
-                      ))}
+                    <div className="absolute top-full left-0 bg-white w-48 rounded pt9 -ml-5 font-[400]">
+                      <div className="mt-9 shadow-lg pb-2 z-20">
+                        {item.subItems.map((subItem, subIndex) => (
+                          <Link
+                            key={subIndex}
+                            href={subItem.href}
+                            className="block px-5 py-2 hover:bg-gray-100"
+                          >
+                            {subItem.title}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   )}
                 </div>
