@@ -40,7 +40,7 @@ const HeroSection = () => {
       {/* Background Image Slider */}
       <div
         className={`absolute inset-0 overflow-hidden ${
-          isLandingPage && "rounded-[20px]"
+          isLandingPage && "rounded-[20px] mx-4 lg:mx-0"
         }`}
       >
         {!isLandingPage ? (

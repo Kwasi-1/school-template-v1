@@ -71,7 +71,7 @@ export default function Navbar() {
               <SheetContent side="left" className="bg-white">
                 <SheetHeader className="mb-4 bg-black/5">
                   <Image
-                    src="/school_logo.svg"
+                    src="/school_logo_dark.svg"
                     alt="Unipix Logo"
                     width={120}
                     height={40}
@@ -84,7 +84,7 @@ export default function Navbar() {
                         <button
                           onClick={() =>
                             setDropdownOpen(
-                              dropdownOpen === item.title ? "" : item.title
+                              dropdownOpen === item.title ? "" : item.title,
                             )
                           }
                           className="flex justify-between w-full text-left font-medium text-gray-800"
@@ -119,7 +119,7 @@ export default function Navbar() {
                       >
                         {item.title}
                       </Link>
-                    )
+                    ),
                   )}
                 </nav>
               </SheetContent>
@@ -129,7 +129,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex items-center">
             <Image
-              src="/school_logo.svg"
+              src="/school_logo_dark.svg"
               alt="Unipix Logo"
               width={120}
               height={40}
@@ -174,7 +174,7 @@ export default function Navbar() {
                 >
                   {item.title}
                 </Link>
-              )
+              ),
             )}
           </div>
 
