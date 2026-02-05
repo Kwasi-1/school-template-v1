@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
-import LayoutWrapper from "@/components/LayoutWrapper";
+import LayoutWrapper from "@/components/common/LayoutWrapper";
 
 // Load Inter from Google Fonts
 const inter = Inter({

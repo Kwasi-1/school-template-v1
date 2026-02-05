@@ -1,6 +1,6 @@
 "use client";
 
-import PersonalInfoForm from "../PersonalInfoForm";
+import PersonalInfoForm from "../common/PersonalInfoForm";
 
 const ApplicationFormSection = () => {
   return (
@@ -57,7 +57,7 @@ const ApplicationFormSection = () => {
                 >
                   <i className={`fab fa-${platform} text-lg`}></i>
                 </a>
-              )
+              ),
             )}
           </div>
         </div>

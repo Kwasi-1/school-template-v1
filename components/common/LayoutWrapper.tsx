@@ -1,10 +1,10 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/Hero";
-import Footer from "@/components/Footer";
-import BackToTopButton from "@/components/BackToTopButton";
+import Navbar from "@/components/common/Navbar";
+import HeroSection from "@/components/common/Hero";
+import Footer from "@/components/common/Footer";
+import BackToTopButton from "@/components/common/BackToTopButton";
 
 export default function LayoutWrapper({
   children,

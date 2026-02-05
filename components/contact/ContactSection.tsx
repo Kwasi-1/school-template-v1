@@ -109,8 +109,8 @@ const ContactCard = ({ alt, info }: { alt: string; info: string[] }) => (
 
 const ContactSection = () => {
   return (
-    <section className="pt-[120px] pb-[100px] container mx-auto px-4 md:px-8">
-      <div className="max-w-[85%] mx-auto text-center">
+    <section className="pt-[120px] pb-[100px] container-lg mx-auto px-4 md:px-8">
+      <div className="max-w-full xl:max-w-[85%] mx-auto text-center">
         <h2 className="text-3xl md:text-5xl text-black mb-12">
           General Contact Information
         </h2>

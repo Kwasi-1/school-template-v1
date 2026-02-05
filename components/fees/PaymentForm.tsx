@@ -3,7 +3,7 @@
 import { PaystackButton } from "react-paystack";
 import { usePaymentFormValidation } from "@/hooks/useFormValidation";
 import { useToast } from "@/hooks/useToast";
-import InputField from "../InputField";
+import InputField from "../common/InputField";
 
 interface PaymentFormData {
   fullname: string;

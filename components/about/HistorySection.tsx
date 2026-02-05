@@ -4,8 +4,8 @@ import Image from "next/image";
 
 const HistorySection = () => {
   return (
-    <section className="w-[85%] mx-auto py-[100px] container">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-15 items-center">
+    <section className=" container-lg py-[100px] section-padding">
+      <div className="max-w-full xl:max-w-[85%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-15 items-center">
         {/* Image */}
         <div>
           <Image

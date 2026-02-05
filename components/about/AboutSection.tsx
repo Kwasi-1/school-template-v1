@@ -2,8 +2,8 @@
 
 const AboutSection = () => {
   return (
-    <section className="w-[85%] container mx-auto pb-12 pt-[120px] border-b border-gray-300 text-[16px]">
-      <div className="grid grid-cols-1 md:grid-cols-[0.5fr_1fr] gap-6 items-center">
+    <section className="container-lg section-padding">
+      <div className="max-w-full xl:max-w-[85%] mx-auto pb-12 pt-[120px] grid border-b border-gray-300 text-[16px] grid-cols-1 md:grid-cols-[0.5fr_1fr] gap-6 items-center">
         {/* Title */}
         <h2 className="text-4xl text-black">About University</h2>
 
