@@ -17,7 +17,7 @@ const RequirementsList = () => {
             <span className="text-sm uppercase tracking-wider font-medium text-primary">
               What You Need
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mt-2">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mt-2 text-text-primary">
               Admission Requirements
             </h2>
           </div>
@@ -28,10 +28,10 @@ const RequirementsList = () => {
               <button
                 key={index}
                 onClick={() => setActiveLevel(index)}
-                className={`px-5 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
+                className={`px-5 py-3 rounded-[10px] text-sm font-medium transition-all duration-300 ${
                   activeLevel === index
                     ? "bg-primary text-white"
-                    : "bg-secondary text-gray-700 hover:bg-gray-200"
+                    : "bg-transparent border border-gray-300 text-text-secondary hover:border-primary/40"
                 }`}
               >
                 {level.level.split(" (")[0]}
@@ -40,7 +40,7 @@ const RequirementsList = () => {
           </div>
 
           {/* Active Level Content */}
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+          <div className="rounded-[10px] border border-gray-300 overflow-hidden">
             <div className="grid md:grid-cols-2">
               {/* Left: Level Info */}
               <div className="bg-primary text-white p-8 md:p-12">
@@ -60,7 +60,7 @@ const RequirementsList = () => {
                     {levels[activeLevel].documents.map((doc, idx) => (
                       <li key={idx} className="flex items-start gap-3">
                         <Icon
-                          icon="mdi:check-circle"
+                          icon="mdi:check-circle-outline"
                           className="w-5 h-5 mt-0.5 text-white/80"
                         />
                         <span className="text-white/90">{doc}</span>
@@ -71,7 +71,7 @@ const RequirementsList = () => {
               </div>
 
               {/* Right: Requirements */}
-              <div className="p-8 md:p-12">
+              <div className="p-8 md:p-12 bg-white">
                 <h4 className="text-lg font-semibold mb-6 flex items-center gap-2 text-primary">
                   <Icon icon="mdi:clipboard-check-outline" />
                   Entry Requirements
@@ -80,15 +80,15 @@ const RequirementsList = () => {
                   {levels[activeLevel].requirements.map((req, idx) => (
                     <li
                       key={idx}
-                      className="flex items-start gap-4 p-4 bg-secondary rounded-xl"
+                      className="flex items-start gap-4 p-4 bg-transparent border border-gray-300 rounded-[10px]"
                     >
-                      <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 bg-transparent border border-gray-300 rounded-full flex items-center justify-center flex-shrink-0">
                         <Icon
-                          icon="mdi:check"
+                          icon="mdi:check-outline"
                           className="w-4 h-4 text-primary"
                         />
                       </div>
-                      <span className="text-gray-700">{req}</span>
+                      <span className="text-text-secondary">{req}</span>
                     </li>
                   ))}
                 </ul>

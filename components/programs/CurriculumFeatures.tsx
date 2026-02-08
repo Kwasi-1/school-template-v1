@@ -7,7 +7,7 @@ const CurriculumFeatures = () => {
   const { curriculumFeatures } = programsContent;
 
   return (
-    <section className="py-16 md:py-24 px-4">
+    <section className="py-16 md:py-24 px-4 bg-secondary">
       <div className="container-lg mx-auto">
         <div className="max-w-full xl:max-w-[85%] mx-auto">
           {/* Section Title */}
@@ -15,7 +15,7 @@ const CurriculumFeatures = () => {
             <span className="text-sm uppercase tracking-wider font-medium text-primary">
               Our Approach
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mt-2">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mt-2 text-text-primary">
               Curriculum Highlights
             </h2>
           </div>
@@ -25,13 +25,15 @@ const CurriculumFeatures = () => {
             {curriculumFeatures.map((feature, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300 group text-center"
+                className="bg-transparent rounded-[10px] p-6 md:p-8 border border-gray-300 hover:border-primary/40 transition-all duration-300 group text-center"
               >
                 {/* Icon */}
-                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors duration-300">
+                <div className="w-16 h-16 bg-transparent border border-gray-300 rounded-[10px] flex items-center justify-center mx-auto mb-6 group-hover:border-primary transition-colors duration-300">
                   <Icon
-                    icon={feature.icon}
-                    className="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300"
+                    icon={feature.icon
+                      .replace(":filled", "-outline")
+                      .replace(/:(?!outline)/, "-outline:")}
+                    className="w-8 h-8 text-primary"
                   />
                 </div>
 

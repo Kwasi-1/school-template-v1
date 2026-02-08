@@ -4,9 +4,9 @@ import { Icon } from "@iconify/react";
 import { programsContent } from "@/content/programs";
 
 const categoryIcons: Record<string, string> = {
-  Sports: "mdi:soccer",
-  "Arts & Culture": "mdi:palette",
-  "Academic Clubs": "mdi:lightbulb-on-outline",
+  Sports: "mdi:soccer-outline",
+  "Arts & Culture": "mdi:palette-outline",
+  "Academic Clubs": "mdi:lightbulb-outline",
   Leadership: "mdi:account-star-outline",
 };
 
@@ -14,7 +14,7 @@ const Extracurriculars = () => {
   const { extracurriculars } = programsContent;
 
   return (
-    <section className="py-16 md:py-24 px-4">
+    <section className="py-16 md:py-24 px-4 bg-secondary">
       <div className="container-lg mx-auto">
         <div className="max-w-full xl:max-w-[85%] mx-auto">
           {/* Section Title */}
@@ -22,7 +22,7 @@ const Extracurriculars = () => {
             <span className="text-sm uppercase tracking-wider font-medium text-primary">
               Extra-Curricular Activities
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mt-2">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mt-2 text-text-primary">
               {extracurriculars.title}
             </h2>
           </div>
@@ -32,13 +32,15 @@ const Extracurriculars = () => {
             {extracurriculars.activities.map((activity, index) => (
               <div
                 key={index}
-                className="bg-secondary rounded-2xl p-6 md:p-8 hover:shadow-md transition-shadow duration-300"
+                className="bg-transparent rounded-[10px] p-6 md:p-8 border border-gray-300 hover:border-primary/40 transition-all duration-300"
               >
                 {/* Icon & Category */}
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                  <div className="w-12 h-12 bg-transparent border border-gray-300 rounded-[10px] flex items-center justify-center">
                     <Icon
-                      icon={categoryIcons[activity.category] || "mdi:star"}
+                      icon={
+                        categoryIcons[activity.category] || "mdi:star-outline"
+                      }
                       className="w-6 h-6 text-primary"
                     />
                   </div>

@@ -28,10 +28,10 @@ const WhyChooseUs = () => {
             {whyChooseUs.points.map((point, index) => (
               <div
                 key={index}
-                className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 text-center"
+                className="bg-transparent rounded-[10px] p-6 md:p-8 border border-white/30 hover:border-white/50 transition-all duration-300 text-center"
               >
                 {/* Icon */}
-                <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 bg-transparent border border-white/30 rounded-[10px] flex items-center justify-center mx-auto mb-6">
                   <Icon icon={point.icon} className="w-8 h-8 text-white" />
                 </div>
 
@@ -39,7 +39,7 @@ const WhyChooseUs = () => {
                 <h3 className="text-lg font-semibold text-white mb-3">
                   {point.title}
                 </h3>
-                <p className="text-white/80 text-sm leading-relaxed">
+                <p className="text-white/70 text-sm leading-relaxed">
                   {point.description}
                 </p>
               </div>

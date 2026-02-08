@@ -15,30 +15,32 @@ const ImportantDates = () => {
             <span className="text-sm uppercase tracking-wider font-medium text-primary">
               Mark Your Calendar
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mt-2">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mt-2 text-text-primary">
               Important Dates
             </h2>
           </div>
 
-          {/* Dates Timeline */}
+          {/* Dates Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {importantDates.map((item, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl p-6 border border-gray-100 hover:border-primary/20 hover:shadow-md transition-all duration-300 group"
+                className="bg-transparent rounded-[10px] p-6 border border-gray-300 hover:border-primary/40 transition-all duration-300 group"
               >
                 <div className="flex items-start gap-4">
                   {/* Calendar Icon */}
-                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-primary transition-colors duration-300">
+                  <div className="w-14 h-14 bg-transparent border border-gray-300 rounded-[10px] flex items-center justify-center flex-shrink-0 group-hover:border-primary transition-colors duration-300">
                     <Icon
-                      icon="mdi:calendar-month"
-                      className="w-7 h-7 text-primary group-hover:text-white transition-colors duration-300"
+                      icon="mdi:calendar-month-outline"
+                      className="w-7 h-7 text-primary"
                     />
                   </div>
 
                   {/* Content */}
                   <div>
-                    <p className="text-text-secondary text-sm mb-1">{item.label}</p>
+                    <p className="text-text-secondary text-sm mb-1">
+                      {item.label}
+                    </p>
                     <p className="text-lg font-semibold text-text-primary">
                       {item.date}
                     </p>

@@ -15,7 +15,7 @@ const AdmissionSteps = () => {
             <span className="text-sm uppercase tracking-wider font-medium text-primary">
               How To Apply
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mt-2">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mt-2 text-text-primary">
               Admission Process
             </h2>
           </div>
@@ -25,7 +25,7 @@ const AdmissionSteps = () => {
             {steps.map((step, index) => (
               <div
                 key={step.step}
-                className="relative bg-white rounded-2xl p-6 md:p-8 border border-gray-100 hover:shadow-lg transition-shadow duration-300 group"
+                className="relative bg-transparent rounded-[10px] p-6 md:p-8 border border-gray-300 hover:border-primary/40 transition-all duration-300 group"
               >
                 {/* Step Number */}
                 <div className="absolute -top-4 left-6 bg-primary text-primary-foreground w-10 h-10 rounded-full flex items-center justify-center text-lg font-semibold">
@@ -34,11 +34,8 @@ const AdmissionSteps = () => {
 
                 {/* Icon */}
                 <div className="mt-4 mb-6">
-                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
-                    <Icon
-                      icon={step.icon}
-                      className="w-8 h-8 text-primary group-hover:text-primary-foreground transition-colors duration-300"
-                    />
+                  <div className="w-16 h-16 bg-transparent border border-gray-300 rounded-[10px] flex items-center justify-center group-hover:border-primary transition-colors duration-300">
+                    <Icon icon={step.icon} className="w-8 h-8 text-primary" />
                   </div>
                 </div>
 
@@ -52,7 +49,7 @@ const AdmissionSteps = () => {
 
                 {/* Connector Line (hidden on last item and mobile) */}
                 {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-4 w-8 border-t-2 border-dashed border-primary/30" />
+                  <div className="hidden lg:block absolute top-1/2 -right-4 w-8 border-t-2 border-dashed border-gray-400" />
                 )}
               </div>
             ))}
