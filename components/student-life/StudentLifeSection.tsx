@@ -1,6 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { Icon } from "@iconify/react";
+import ImageLightbox from "@/components/gallery/ImageLightbox";
 import { StudentLifeSection as SectionType } from "@/content/student-life";
 
 interface StudentLifeSectionProps {
@@ -9,48 +13,98 @@ interface StudentLifeSectionProps {
 }
 
 const StudentLifeSection = ({ section, index }: StudentLifeSectionProps) => {
-  const isEven = index % 2 === 0;
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  // Convert section images to gallery format for lightbox
+  const galleryImages = section.images.map((img, idx) => ({
+    id: `${section.id}-${idx}`,
+    src: img.src,
+    alt: img.alt,
+    caption: img.alt,
+    category: section.title,
+  }));
+
+  const handleImageClick = (idx: number) => {
+    setLightboxIndex(idx);
+  };
+
+  const handleCloseLightbox = () => {
+    setLightboxIndex(null);
+  };
+
+  const handlePrevImage = () => {
+    if (lightboxIndex !== null && lightboxIndex > 0) {
+      setLightboxIndex(lightboxIndex - 1);
+    }
+  };
+
+  const handleNextImage = () => {
+    if (lightboxIndex !== null && lightboxIndex < galleryImages.length - 1) {
+      setLightboxIndex(lightboxIndex + 1);
+    }
+  };
 
   return (
-    <section id={section.id} className="scroll-mt-24">
-      <div
-        className={`grid grid-cols-1 lg:grid-cols-2 ${
-          isEven ? "" : "lg:flex-row-reverse"
-        }`}
-      >
-        {/* Text Content */}
-        <div
-          className={`flex flex-col justify-center p-8 md:p-12 lg:p-16 ${
-            isEven ? "lg:order-1" : "lg:order-2"
-          }`}
-          style={{ backgroundColor: section.accentColor || "#800020" }}
-        >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white capitalize tracking-wide mb-6">
-            {section.title}
-          </h2>
-          <div className="w-16 h-1 bg-white/50 mb-6" />
-          <p className="text-white/90 leading-relaxed text-base md:text-lg">
-            {section.description}
-          </p>
+    <>
+      <section id={section.id} className="scroll-mt-24">
+        {/* Section Header */}
+        <div className="py-8 px-4 bg-secondary">
+          <div className="container-lg mx-auto">
+            <div className="max-w-full xl:max-w-[97%] mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+              <div>
+                <h2 className="text-xl md:text-2xl font-medium text-text-primary">
+                  {section.title}
+                </h2>
+              </div>
+              <Link
+                href={`/student-life/${section.id}`}
+                className="inline-flex items-center gap-2 text-primary font-medium hover:underline text-sm"
+              >
+                View All
+                <Icon icon="mdi:arrow-right" />
+              </Link>
+            </div>
+          </div>
         </div>
 
-        {/* Image Grid */}
-        <div
-          className={`grid grid-cols-2 ${isEven ? "lg:order-2" : "lg:order-1"}`}
-        >
+        {/* Image Grid - Full Width */}
+        <div className="grid grid-cols-2 md:grid-cols-4">
           {section.images.slice(0, 4).map((image, idx) => (
-            <div key={idx} className="relative aspect-square overflow-hidden">
+            <div
+              key={idx}
+              onClick={() => handleImageClick(idx)}
+              className="relative aspect-square overflow-hidden cursor-pointer group"
+            >
               <Image
                 src={image.src}
                 alt={image.alt}
                 fill
-                className="object-cover hover:scale-110 transition-transform duration-500"
+                className="object-cover transition-transform duration-500 group-hover:scale-110"
               />
+              {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
+                <Icon
+                  icon="mdi:magnify-plus-outline"
+                  className="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                />
+              </div>
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Image Lightbox */}
+      {lightboxIndex !== null && (
+        <ImageLightbox
+          image={galleryImages[lightboxIndex]}
+          onClose={handleCloseLightbox}
+          onPrev={handlePrevImage}
+          onNext={handleNextImage}
+          hasPrev={lightboxIndex > 0}
+          hasNext={lightboxIndex < galleryImages.length - 1}
+        />
+      )}
+    </>
   );
 };
 

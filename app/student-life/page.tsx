@@ -1,6 +1,5 @@
 "use client";
 
-import StudentLifeHero from "@/components/student-life/StudentLifeHero";
 import StudentLifeNav from "@/components/student-life/StudentLifeNav";
 import StudentLifeSection from "@/components/student-life/StudentLifeSection";
 import CTABanner from "@/components/common/CTABanner";
@@ -11,27 +10,24 @@ export default function StudentLifePage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      {/* <StudentLifeHero /> */}
-
-      {/* Sub Navigation */}
+      {/* Hero Navigation - Image Cards */}
       <StudentLifeNav />
 
-      {/* Sections */}
+      {/* Image Gallery Sections */}
       {sections.map((section, index) => (
         <StudentLifeSection key={section.id} section={section} index={index} />
       ))}
 
       {/* CTA Banner */}
-      {/* <CTABanner
+      <CTABanner
         subtitle="Ready to Join Us?"
         title="Experience Student Life First-Hand"
         primaryButtonText="Schedule a Visit"
         primaryButtonHref="/contact"
         secondaryButtonText="Apply Now"
-        secondaryButtonHref="/admissions"
+        secondaryButtonHref="/apply"
         variant="primary"
-      /> */}
+      />
     </div>
   );
 }
