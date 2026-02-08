@@ -13,8 +13,8 @@ const AboutSection = () => {
         <h2 className="text-4xl text-text-primary">{overview.title}</h2>
 
         {/* Separator & Text */}
-        <div className="flex gap-[50px] ">
-          <div className="border-l border-gray-300"></div>
+        <div className="flex md:gap-[50px] ">
+          <div className="hidden md:block border-l border-gray-300"></div>
           <p className="leading-relaxed">{overview.welcomeText}</p>
         </div>
       </div>

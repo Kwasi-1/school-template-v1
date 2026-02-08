@@ -232,6 +232,7 @@ export default function Navbar() {
                           <Link
                             key={subIndex}
                             href={subItem.href}
+                            onClick={() => setDropdownOpen("")}
                             onMouseEnter={() => setHoveredSubItem(subIndex)}
                             className={`group flex items-center justify-between p-4 rounded-[10px] transition-all duration-200 w-[60%] ${
                               hoveredSubItem === subIndex

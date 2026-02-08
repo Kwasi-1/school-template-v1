@@ -44,7 +44,7 @@ const FeeCard = ({ level, isActive, onClick }: FeeCardProps) => {
             Starting from
           </p>
           <p
-            className={`text-2xl md:text-3xl font-semibold ${isActive ? "text-white" : "text"}`}
+            className={`text-2xl md:text-3xl mt-2 ${isActive ? "text-white font-semibold" : " font-medium"}`}
           >
             {level.totalPerTerm}
             <span

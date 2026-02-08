@@ -30,7 +30,7 @@ const HeroSection = () => {
   const isLandingPage = pathname === "/";
   const containerClasses = isLandingPage
     ? "w-full container-lg mx-auto max-h-[600px] lg:max-h-[800px] h-full py-[80px] px-4 sm:px-6 md:px-12 lg:px-16 xl:px-0"
-    : "h-[60vh] px-4 sm:px-6 md:px-12";
+    : "h-[50vh] md:h-[60vh] px-4 sm:px-6 md:px-12";
 
   return (
     <section
@@ -40,7 +40,7 @@ const HeroSection = () => {
       {/* Background Image Slider */}
       <div
         className={`absolute inset-0 overflow-hidden ${
-          isLandingPage && "rounded-[20px] mx-4 lg:mx-0"
+          isLandingPage ? "md:rounded-[20px] md:mx-4 lg:mx-0" : "rounded-none md:rounded[20px] md:mx4"
         }`}
       >
         {!isLandingPage ? (
