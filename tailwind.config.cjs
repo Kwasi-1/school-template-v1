@@ -11,7 +11,6 @@ module.exports = {
         primary: {
           DEFAULT: "#890c25",
           foreground: "#ffffff",
-          light: "#890c25/10", // For subtle backgrounds
           hover: "#6d091e", // Darker for hover states
         },
         // Secondary (light backgrounds) - replaces bg-gray-100, bg-gray-50

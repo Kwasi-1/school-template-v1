@@ -1,9 +1,39 @@
 @import "tailwindcss";
+@config "../tailwind.config.cjs";
 
 @plugin "tailwindcss-animate";
 
-
-/* a:hover{
+/* Custom Theme Colors for Tailwind v4 */
+@theme {
+  /* Primary brand color (burgundy) */
+  --color-primary: #890c25;
+  --color-primary-foreground: #ffffff;
+  --color-primary-hover: #6d091e;
+  
+  /* Secondary (light backgrounds) */
+  --color-secondary: #f6f6f6;
+  --color-secondary-foreground: #262626;
+  --color-secondary-hover: #eeeeee;
+  
+  /* Dark sections */
+  --color-dark: #262626;
+  --color-dark-foreground: #ffffff;
+  --color-dark-muted: #737477;
+  
+  /* Light backgrounds */
+  --color-light: #F9FAFB;
+  --color-light-foreground: #262626;
+  
+  /* Footer specific */
+  --color-footer: #181818;
+  --color-footer-foreground: #ffffff;
+  --color-footer-muted: #9ca3af;
+  
+  /* Text colors */
+  --color-text-primary: #262626;
+  --color-text-secondary: #737477;
+  --color-text-muted: #9ca3af;
+}/* a:hover{
   color: rgb(143, 9, 9);
 } */
 .container-lg {
