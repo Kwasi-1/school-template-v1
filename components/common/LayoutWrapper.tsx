@@ -15,14 +15,15 @@ export default function LayoutWrapper({
   const isAdminPage =
     pathname.startsWith("/admin") || pathname.startsWith("/login");
   const isNewsPage = pathname === "/news" || pathname.startsWith("/news/");
+  const isApplyPage = pathname === "/apply";
 
   return (
     <>
       {!isAdminPage && <Navbar />}
       <div className={` ${!isAdminPage && "mt-[100px]"}`}>
-        {!isAdminPage && !isNewsPage && <HeroSection />}
+        {!isAdminPage && !isNewsPage && !isApplyPage && <HeroSection />}
         {children}
-        {!isAdminPage && <Footer />}
+        {!isAdminPage && !isApplyPage && <Footer />}
         {!isAdminPage && <BackToTopButton />}
       </div>
     </>

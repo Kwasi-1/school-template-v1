@@ -30,7 +30,7 @@ export default function ProgramsPage() {
         subtitle="Ready to Join?"
         title="Start Your Child's Journey Today"
         primaryButtonText="Apply Now"
-        primaryButtonHref="/admissions"
+        primaryButtonHref="/apply"
         secondaryButtonText="Contact Us"
         secondaryButtonHref="/contact"
         variant="dark"

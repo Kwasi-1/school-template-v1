@@ -4,7 +4,7 @@ import { Icon } from "@iconify/react";
 import { programsContent } from "@/content/programs";
 
 const categoryIcons: Record<string, string> = {
-  Sports: "mdi:soccer-outline",
+  Sports: "mdi:soccer",
   "Arts & Culture": "mdi:palette-outline",
   "Academic Clubs": "mdi:lightbulb-outline",
   Leadership: "mdi:account-star-outline",
@@ -14,7 +14,7 @@ const Extracurriculars = () => {
   const { extracurriculars } = programsContent;
 
   return (
-    <section className="py-16 md:py-24 px-4 bg-secondary">
+    <section className="py-16 md:py-24 px-4 bgsecondary">
       <div className="container-lg mx-auto">
         <div className="max-w-full xl:max-w-[85%] mx-auto">
           {/* Section Title */}
@@ -28,7 +28,7 @@ const Extracurriculars = () => {
           </div>
 
           {/* Activities Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {extracurriculars.activities.map((activity, index) => (
               <div
                 key={index}

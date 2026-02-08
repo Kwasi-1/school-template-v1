@@ -4,7 +4,7 @@ import AdmissionOverview from "@/components/admissions/AdmissionOverview";
 import AdmissionSteps from "@/components/admissions/AdmissionSteps";
 import RequirementsList from "@/components/admissions/RequirementsList";
 import ImportantDates from "@/components/admissions/ImportantDates";
-import ApplicationForm from "@/components/admissions/ApplicationForm";
+import ApplyNowSection from "@/components/admissions/ApplyNowSection";
 import CTABanner from "@/components/common/CTABanner";
 
 export default function AdmissionsPage() {
@@ -22,8 +22,8 @@ export default function AdmissionsPage() {
       {/* Important Dates */}
       <ImportantDates />
 
-      {/* Application Form */}
-      <ApplicationForm />
+      {/* Apply Now Section */}
+      <ApplyNowSection />
 
       {/* CTA Banner */}
       <CTABanner

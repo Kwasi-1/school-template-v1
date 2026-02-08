@@ -7,7 +7,7 @@ const WhyChooseUs = () => {
   const { whyChooseUs } = programsContent;
 
   return (
-    <section className="bg-primary py-16 md:py-24 px-4">
+    <section className="bg-dark py-16 md:py-24 px-4">
       <div className="container-lg mx-auto">
         <div className="max-w-full xl:max-w-[85%] mx-auto">
           {/* Section Title */}
@@ -24,19 +24,19 @@ const WhyChooseUs = () => {
           </div>
 
           {/* Points Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-6">
             {whyChooseUs.points.map((point, index) => (
               <div
                 key={index}
                 className="bg-transparent rounded-[10px] p-6 md:p-8 border border-white/30 hover:border-white/50 transition-all duration-300 text-center"
               >
                 {/* Icon */}
-                <div className="w-16 h-16 bg-transparent border border-white/30 rounded-[10px] flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 bg-transparent flex items-center justify-center mx-auto mb-6">
                   <Icon icon={point.icon} className="w-8 h-8 text-white" />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-lg font-semibold text-white mb-3">
+                <h3 className="text-lg tracking-wider text-white mb-3">
                   {point.title}
                 </h3>
                 <p className="text-white/70 text-sm leading-relaxed">

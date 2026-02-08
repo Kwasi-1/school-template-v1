@@ -21,12 +21,12 @@ const LevelCard = ({ level, index }: LevelCardProps) => {
     >
       {/* Image */}
       <div className={`relative ${!isEven ? "lg:order-2" : ""}`}>
-        <div className="relative aspect-[4/3] rounded-[10px] overflow-hidden border border-gray-300">
+        <div className="relative aspect-[4/3] rounded[10px] overflow-hidden border border-gray-300">
           <Image
             src={level.image}
             alt={level.name}
             fill
-            className="object-cover"
+            className="object-cover hover:scale-105 transition-all duration-300 ease-in-out"
           />
           {/* Age Badge */}
           <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-[10px] border border-gray-200">
@@ -39,7 +39,7 @@ const LevelCard = ({ level, index }: LevelCardProps) => {
 
       {/* Content */}
       <div className={`${!isEven ? "lg:order-1" : ""}`}>
-        <span className="text-sm uppercase tracking-wider font-medium text-primary">
+        <span className="text-sm uppercase tracking-wider font-medium text-primary hidden">
           {level.shortName}
         </span>
         <h3 className="text-2xl md:text-3xl lg:text-4xl font-normal mt-2 mb-4 text-text-primary">
@@ -83,7 +83,7 @@ const LevelCard = ({ level, index }: LevelCardProps) => {
 
         {/* CTA */}
         <Link
-          href="/admissions"
+          href="/apply"
           className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
         >
           Apply for {level.shortName}
