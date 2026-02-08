@@ -13,12 +13,12 @@ import {
 } from "@/components/ui/sheet";
 
 const menuItems = [
-  { title: "Home", href: "/#herosection" },
+  { title: "Home", href: "/" },
   {
-    title: "Pages",
+    title: "About",
     subItems: [
-      { title: "About", href: "/about" },
-      { title: "FAQ", href: "/faq" },
+      { title: "About Us", href: "/about" },
+      { title: "Gallery", href: "/gallery" },
     ],
   },
   {
@@ -26,17 +26,10 @@ const menuItems = [
     subItems: [
       { title: "Programs", href: "/programs" },
       { title: "Admissions", href: "/admissions" },
+      { title: "Fees", href: "/fees" },
     ],
   },
-  { title: "Student Services", href: "/student-services" },
-  {
-    title: "Blog",
-    subItems: [
-      { title: "News", href: "/blog/news" },
-      { title: "Events", href: "/blog/events" },
-    ],
-  },
-  { title: "Fees", href: "/fees" },
+  { title: "News & Events", href: "/news" },
   { title: "Contact", href: "/contact" },
 ];
 

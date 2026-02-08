@@ -1,10 +1,40 @@
-import ApplicationForm from "@/components/admissions/ApplicationForm";
+"use client";
 
-function page() {
+import AdmissionOverview from "@/components/admissions/AdmissionOverview";
+import AdmissionSteps from "@/components/admissions/AdmissionSteps";
+import RequirementsList from "@/components/admissions/RequirementsList";
+import ImportantDates from "@/components/admissions/ImportantDates";
+import ApplicationForm from "@/components/admissions/ApplicationForm";
+import CTABanner from "@/components/common/CTABanner";
+
+export default function AdmissionsPage() {
   return (
-    <div>
+    <div className="min-h-screen bg-white">
+      {/* Overview Section */}
+      <AdmissionOverview />
+
+      {/* Admission Steps */}
+      <AdmissionSteps />
+
+      {/* Requirements by Level */}
+      <RequirementsList />
+
+      {/* Important Dates */}
+      <ImportantDates />
+
+      {/* Application Form */}
       <ApplicationForm />
+
+      {/* CTA Banner */}
+      <CTABanner
+        subtitle="Need Help?"
+        title="Contact Our Admissions Team"
+        primaryButtonText="Contact Us"
+        primaryButtonHref="/contact"
+        secondaryButtonText="Call Now"
+        secondaryButtonHref="tel:+233241234567"
+        variant="primary"
+      />
     </div>
   );
 }
-export default page;
