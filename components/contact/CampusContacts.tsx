@@ -19,9 +19,9 @@ const CampusContacts = () => {
             Our Campus Location
           </h2>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 gap-8">
             {/* Map Embed */}
-            <div className="w-full h-[400px] lg:h-[500px] rounded-lg overflow-hidden shadow-lg">
+            <div className="w-full h-[400px] lg:h-[500px] rounded-none overflow-hidden shadow-lg">
               {campus.embedUrl ? (
                 <iframe
                   src={campus.embedUrl}
@@ -38,61 +38,7 @@ const CampusContacts = () => {
                   <p className="text-gray-500">Map not available</p>
                 </div>
               )}
-            </div>
-
-            {/* Campus Info */}
-            <div className="flex flex-col justify-center p-6 lg:p-10 bg-secondary rounded-lg">
-              <h3 className="text-3xl md:text-4xl text-text-primary mb-6">
-                {campus.name}
-              </h3>
-
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <Icon
-                    icon="mdi:map-marker"
-                    className="text-primary text-2xl mt-1 flex-shrink-0"
-                  />
-                  <div>
-                    <p className="font-medium text-text-primary">Address</p>
-                    <p className="text-text-secondary">{campus.address}</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <Icon
-                    icon="mdi:phone"
-                    className="text-primary text-2xl mt-1 flex-shrink-0"
-                  />
-                  <div>
-                    <p className="font-medium text-text-primary">Phone</p>
-                    <p className="text-text-secondary">{campus.phone}</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <Icon
-                    icon="mdi:email"
-                    className="text-primary text-2xl mt-1 flex-shrink-0"
-                  />
-                  <div>
-                    <p className="font-medium text-text-primary">Email</p>
-                    <p className="text-text-secondary">{campus.email}</p>
-                  </div>
-                </div>
-              </div>
-
-              {campus.mapUrl && (
-                <Link
-                  href={campus.mapUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-8 inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full hover:bg-primary-hover transition duration-300 w-fit"
-                >
-                  <Icon icon="mdi:directions" className="text-xl" />
-                  Get Directions
-                </Link>
-              )}
-            </div>
+            </div>           
           </div>
         </div>
       </section>
