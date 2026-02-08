@@ -62,7 +62,7 @@ const Footer = () => {
           isLandingPage && "pt-[60px]"
         }`}
       >
-        <div className="w-[90%] container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-6 md:px-20 py-[100px]">
+        <div className="w-full lg:w-[90%] max-w-[90%] container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-6 lg:px-20 py-[100px]">
           {/* Logo and Info Section */}
           <div>
             <h2 className="text-2xl font-semibold underline text-footer-foreground">

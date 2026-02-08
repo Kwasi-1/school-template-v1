@@ -209,9 +209,9 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Full Width Mega Menu Dropdown */}
+        {/* Full Width Mega Menu Dropdown - Desktop Only */}
         <div
-          className={`absolute left-0 right-0 bg-white border-t border-gray-100 shadow-lg transition-all duration-300 ${
+          className={`hidden lg:block absolute left-0 right-0 bg-white border-t border-gray-100 shadow-lg transition-all duration-300 ${
             dropdownOpen && currentDropdownMenu
               ? "opacity-100 visible"
               : "opacity-0 invisible pointer-events-none"
