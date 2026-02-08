@@ -57,7 +57,7 @@ export const studentLifeContent: StudentLifeContent = {
       accentColor: "#1a1a2e",
     },
     {
-      id: "extracurricular",
+      id: "activities",
       title: "Extracurricular Activities",
       description:
         "Beyond academics, we offer a rich array of extracurricular activities including drama and theatre, music and choir, dance, art and craft, and French language lessons. These activities help students discover and develop their creative talents.",

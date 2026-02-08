@@ -14,15 +14,14 @@ import {
 
 const menuItems = [
   { title: "Home", href: "/" },
-  {
-    title: "About",
-    subItems: [
-      { title: "About Us", href: "/about" },
-      // { title: "Our History", href: "/history" },
-      { title: "Student Life", href: "/student-life" },
-      { title: "Boarding", href: "/boarding" },
-    ],
-  },
+  { title: "About Us", href: "/about" },
+  // {
+  //   title: "About",
+  //   subItems: [
+  //     { title: "About Us", href: "/about" },
+  //     // { title: "Our History", href: "/history" },
+  //   ],
+  // },
   {
     title: "Academics",
     subItems: [
@@ -31,7 +30,17 @@ const menuItems = [
       { title: "Fees", href: "/fees" },
     ],
   },
-  { title: "News & Events", href: "/news" },
+  // { title: "News & Events", href: "/news" },
+  {
+    title: "Student Life",
+    subItems: [
+      { title: "Sports", href: "/student-life/sports" },
+      { title: "Clubs & Societies", href: "/student-life/clubs" },
+      { title: "Activities", href: "/student-life/activities" },
+      { title: "Facilities", href: "/student-life/facilities" },
+    ],
+  },
+  { title: "Boarding", href: "/boarding" },
   { title: "Contact", href: "/contact" },
 ];
 
