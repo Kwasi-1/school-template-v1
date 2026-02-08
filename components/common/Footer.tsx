@@ -4,26 +4,20 @@ import { Icon } from "@iconify/react";
 import SchoolLogo from "./SchoolLogo";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { siteConfig } from "@/content/site-config";
+import { homeContent } from "@/content/home";
 
 const socialLinks = [
-  { icon: "ic:sharp-facebook", href: "#" },
-  { icon: "mdi:instagram", href: "#" },
-  { icon: "uil:linkedin", href: "#" },
-  { icon: "iconoir:youtube-solid", href: "#" },
+  { icon: "ic:sharp-facebook", href: siteConfig.social.facebook },
+  { icon: "mdi:instagram", href: siteConfig.social.instagram },
+  { icon: "uil:linkedin", href: siteConfig.social.linkedin },
+  { icon: "iconoir:youtube-solid", href: siteConfig.social.youtube },
 ];
-
-const campusLinks = [
-  "academic",
-  "athletics",
-  "campus Life",
-  "research",
-  "academic Area",
-];
-const pageLinks = ["about", "tuition Fee", "alumni", "faculty Staff", "event"];
 
 const Footer = () => {
   const pathname = usePathname();
   const isLandingPage = pathname === "/";
+  const { newsletter } = homeContent;
 
   return (
     <div className="bg-secondary">
@@ -32,7 +26,7 @@ const Footer = () => {
           <div
             className="relative flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 lg:gap-12 w-full lg:w-4/5 py-10 lg:py-16 px-6 md:px-10 rounded-lg mx-auto text-white mb-8 top-16 md:top-24"
             style={{
-              backgroundImage: "url('footer_image.webp')",
+              backgroundImage: `url('${newsletter.backgroundImage}')`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundBlendMode: "multiply",
@@ -40,8 +34,9 @@ const Footer = () => {
           >
             {/* Heading */}
             <h2 className="text-2xl md:text-3xl lg:text-4xl leading-snug lg:leading-snug">
-              Don't Miss Awesome Story <br className="hidden md:block" />
-              From Our Alumni
+              {newsletter.title.split(" ").slice(0, 4).join(" ")}{" "}
+              <br className="hidden md:block" />
+              {newsletter.title.split(" ").slice(4).join(" ")}
             </h2>
 
             {/* Input + Button */}
@@ -49,12 +44,12 @@ const Footer = () => {
               <div className="bg-transparent border border-white rounded-full px-4 py-3 w-full">
                 <input
                   type="email"
-                  placeholder="Enter your mail"
+                  placeholder={newsletter.placeholder}
                   className="bg-transparent text-white placeholder-white outline-none w-full"
                 />
               </div>
               <button className="bg-white hover:bg-dark text-primary hover:text-white font-semibold px-6 py-3 rounded-full flex items-center justify-center transition duration-300 w-full sm:w-auto">
-                Subscribe
+                {newsletter.buttonText}
                 <Icon icon="mdi:arrow-right" className="text-xl ml-2" />
               </button>
             </div>
@@ -73,19 +68,19 @@ const Footer = () => {
             <h2 className="text-2xl font-semibold underline text-footer-foreground">
               <SchoolLogo />
             </h2>
-            <p className="mt-4">
-              We are passionate about education, dedicated to providing
-              high-quality resources for learners of all backgrounds.
-            </p>
+            <p className="mt-4">{siteConfig.description}</p>
             {isLandingPage ? (
               <div className="mt-8 space-y-2">
                 <div className="flex items-center space-x-2">
                   <Icon icon="lsicon:location-outline" />
-                  <span>Park, Melbourne, Australia</span>
+                  <span>
+                    {siteConfig.contact.address.city},{" "}
+                    {siteConfig.contact.address.country}
+                  </span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Icon icon="material-symbols:call" />
-                  <span>485-826-710</span>
+                  <span>{siteConfig.contact.phone[0]}</span>
                 </div>
               </div>
             ) : (
@@ -108,10 +103,13 @@ const Footer = () => {
           </div>
 
           {/* Our Campus Section */}
-          <FooterList title="Our Campus" links={campusLinks} />
+          <FooterList
+            title="Our Campus"
+            links={siteConfig.footerLinks.campus}
+          />
 
           {/* Our Pages Section */}
-          <FooterList title="Our Pages" links={pageLinks} />
+          <FooterList title="Our Pages" links={siteConfig.footerLinks.pages} />
 
           {/* Quick Links */}
           <div>
@@ -119,7 +117,7 @@ const Footer = () => {
               Quick Links
             </h3>
             <div className="space-y-4">
-              <FooterButton href="/admission" text="Apply Now" primary />
+              <FooterButton href="/admissions" text="Apply Now" primary />
               <FooterButton href="/contact" text="Contact" />
             </div>
           </div>
@@ -129,7 +127,10 @@ const Footer = () => {
         <div className="text-center border-t border-stone-700/20 py-6">
           <p>
             Copyright &copy; {new Date().getFullYear()}. All Rights Reserved by
-            <span className="text-footer-foreground"> Unipix</span>
+            <span className="text-footer-foreground">
+              {" "}
+              {siteConfig.shortName}
+            </span>
           </p>
         </div>
       </footer>
@@ -145,7 +146,7 @@ const FooterList = ({ title, links }: { title: string; links: string[] }) => (
     </h3>
     <div className="flex flex-col space-y-2 capitalize">
       {links.map((link, idx) => (
-        <Link href={link} key={idx}>
+        <Link href={`/${link.toLowerCase().replace(/\s+/g, "-")}`} key={idx}>
           {link}
         </Link>
       ))}

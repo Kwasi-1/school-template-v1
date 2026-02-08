@@ -1,15 +1,18 @@
 "use client";
 
 import Image from "next/image";
+import { aboutContent } from "@/content/about";
 
 const HistorySection = () => {
+  const { history } = aboutContent;
+
   return (
     <section className=" container-lg py-[100px] section-padding">
       <div className="max-w-full xl:max-w-[85%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-15 items-center">
         {/* Image */}
         <div>
           <Image
-            src="/About_us_image.webp" // Change to your actual image path
+            src={history.image}
             alt="Library and bust statues"
             className="w-full object-cover"
             width={300}
@@ -19,20 +22,12 @@ const HistorySection = () => {
 
         {/* Text Content */}
         <div>
-          <h2 className="text-4xl text-text-primary">The history of Unipix</h2>
-          <p className=" leading-relaxed mt-8">
-            On September 8, 1971, Unipix, the first college in the American
-            colonies, was founded in Cambridge, Massachusetts. Unipix University
-            was officially founded by a vote by the Great and General Court of
-            the Massachusetts Bay Colony.
-          </p>
-          <p className=" leading-relaxed mt-4">
-            Unipix endowment started with John Unipix’s initial donation of 400
-            books and half his estate, but in 1721, Thomas Hollis began the now
-            standard practice of requiring that a donation be used for a
-            specific purpose when he donated money for “a Divinity Professor, to
-            read lectures in the Halls to the students.”
-          </p>
+          <h2 className="text-4xl text-text-primary">{history.title}</h2>
+          {history.paragraphs.map((paragraph, index) => (
+            <p key={index} className="leading-relaxed mt-8">
+              {paragraph}
+            </p>
+          ))}
         </div>
       </div>
     </section>

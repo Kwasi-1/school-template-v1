@@ -1,20 +1,17 @@
-import Head from "next/head";
 import ContactSection from "@/components/contact/ContactSection";
 import CampusContacts from "@/components/contact/CampusContacts";
 import ContactForm from "@/components/contact/ContactForm";
+import { siteConfig } from "@/content/site-config";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: `Contact Us - ${siteConfig.name}`,
+  description: `Get in touch with ${siteConfig.name} for personalized consultation and expert advice.`,
+};
 
 export default function Contact() {
   return (
     <div className="min-h-screen">
-      <Head>
-        <title>Contact Us - Peskab Construction</title>
-        <meta
-          name="description"
-          content="Get in touch with Peskab Construction for personalized consultation and expert advice."
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <ContactSection />
 
       <CampusContacts />

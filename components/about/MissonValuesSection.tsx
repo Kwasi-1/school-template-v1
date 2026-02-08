@@ -1,33 +1,7 @@
 "use client";
 
 import Image from "next/image";
-
-const values = [
-  {
-    title: "Diversity",
-    description:
-      "Celebrating a rich tapestry of backgrounds, perspectives, and talents.",
-    image: "/event-image-1.webp",
-  },
-  {
-    title: "Innovation",
-    description:
-      "Encouraging creativity, critical thinking, and a spirit of innovation.",
-    image: "/event-image-2.webp",
-  },
-  {
-    title: "Excellence",
-    description:
-      "Striving for academic and research excellence in all endeavors.",
-    image: "/event-image-3.webp",
-  },
-  {
-    title: "Academic Excellence",
-    description:
-      "Our commitment to academic excellence is reflected in the diverse range.",
-    image: "/program1.webp",
-  },
-];
+import { aboutContent } from "@/content/about";
 
 const ValueCard = ({
   title,
@@ -58,10 +32,12 @@ const ValueCard = ({
 );
 
 const MissionValuesSection = () => {
+  const { mission, values } = aboutContent;
+
   return (
     <section className="w-[85%] container mx-auto py-[100px]">
       <h2 className="text-center text-[40px] text-text-primary  mb-10">
-        Mission and Values
+        {mission.title}
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-[250px] relative">

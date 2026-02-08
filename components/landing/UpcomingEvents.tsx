@@ -2,48 +2,31 @@
 
 import { Icon } from "@iconify/react";
 import Image from "next/image";
-
-const events = [
-  {
-    image: "/event-image-1.webp",
-    date: "August 20, 2024",
-    location: "Yarra Park, UK",
-    title: "Cultural Exchange: Building Global Connections Through",
-  },
-  {
-    image: "/event-image-2.webp",
-    date: "August 20, 2024",
-    location: "Yarra Park, UK",
-    title: "Literary Voices: Celebrating Diverse Narratives in",
-  },
-  {
-    image: "/event-image-3.webp",
-    date: "August 20, 2024",
-    location: "Yarra Park, UK",
-    title: "Bridging Cultures: Global Perspectives in Contemporary",
-  },
-];
+import Link from "next/link";
+import { homeContent } from "@/content/home";
 
 export default function UpcomingEvents() {
+  const { events } = homeContent;
+
   return (
     <section className="py-16 lg:py-24 px-4 sm:px-6 2xl:px-16 bg-secondary">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start lg:items-center gap-4">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal leading-tight">
-            UPCOMING EVENT
+            {events.title}
           </h2>
-          <a
-            href="#"
-            className="text-primary font-medium underline flex items-center gap-1 hover:text-[#66001a] transition"
+          <Link
+            href={events.viewAllHref}
+            className="text-primary font-medium underline flex items-center gap-1 hover:text-primary-hover transition"
           >
-            View All <Icon icon="mdi:arrow-right" />
-          </a>
+            {events.viewAllText} <Icon icon="mdi:arrow-right" />
+          </Link>
         </div>
 
         {/* Event Cards */}
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {events.map((event, index) => (
+          {events.items.map((event, index) => (
             <div
               key={index}
               className="rounded-[10px] overflow-hidden border border-[#c2c2c2] group"
@@ -78,7 +61,10 @@ export default function UpcomingEvents() {
                   </h3>
 
                   {/* Read More Button */}
-                  <button className="group mt-4 w-12 h-12 flex items-center justify-center border border-black/80 hover:border-[#890c25] rounded-full hover:text-white hover:bg-[#890c25] transition duration-300">
+                  <button
+                    className="group mt-4 w-12 h-12 flex items-center justify-center border border-black/80 hover:border-primary rounded-full hover:text-white hover:bg-primary transition duration-300"
+                    aria-label={`Read more about ${event.title}`}
+                  >
                     <Icon
                       icon="mdi:arrow-right"
                       className="-rotate-30 group-hover:rotate-0 text-base"
