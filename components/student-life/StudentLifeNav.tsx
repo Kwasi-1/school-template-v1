@@ -91,7 +91,7 @@ const StudentLifeNav = () => {
             <Link
               key={section.id}
               href={`/student-life/${section.id}`}
-              className="group relative flex-shrink-0 w-[75vw] sm:w-[50vw] md:w-[35vw] lg:w-[28vw] aspect-[3/4] overflow-hidden rounded-[10px] snap-start"
+              className="group relative flex-shrink-0 w-[75vw] sm:w-[50vw] md:w-[35vw] lg:w-[28vw] aspect-[4/5] overflow-hidden rounded-[10px] snap-start"
             >
               {/* Background Image */}
               <Image
