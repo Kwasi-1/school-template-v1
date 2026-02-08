@@ -2,29 +2,66 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Icon } from "@iconify/react";
 import { ChevronDown, Menu, X } from "lucide-react";
-import Image from "next/image";
 import { siteConfig } from "@/content/site-config";
 
+// Menu items with images for mega menu
 const menuItems = [
   { title: "Home", href: "/" },
   { title: "About Us", href: "/about" },
   {
     title: "Academics",
     subItems: [
-      { title: "Programs", href: "/programs" },
-      { title: "Admissions", href: "/admissions" },
-      { title: "Fees", href: "/fees" },
+      {
+        title: "Programs",
+        href: "/programs",
+        description:
+          "Explore our diverse academic programs designed to nurture excellence",
+        image: "/program1.webp",
+      },
+      {
+        title: "Admissions",
+        href: "/admissions",
+        description: "Start your application journey with us today",
+        image: "/program2.webp",
+      },
+      {
+        title: "Fees",
+        href: "/fees",
+        description: "Transparent tuition and payment information",
+        image: "/program3.webp",
+      },
     ],
   },
   {
     title: "Student Life",
     subItems: [
-      { title: "Sports", href: "/student-life/sports" },
-      { title: "Clubs & Societies", href: "/student-life/clubs" },
-      { title: "Activities", href: "/student-life/activities" },
-      { title: "Facilities", href: "/student-life/facilities" },
+      {
+        title: "Sports",
+        href: "/student-life/sports",
+        description: "Athletics and competitive sports programs",
+        image: "/event-image-1.webp",
+      },
+      {
+        title: "Clubs & Societies",
+        href: "/student-life/clubs",
+        description: "Join our vibrant student communities",
+        image: "/event-image-2.webp",
+      },
+      {
+        title: "Activities",
+        href: "/student-life/activities",
+        description: "Extracurricular experiences beyond the classroom",
+        image: "/event-image-3.webp",
+      },
+      {
+        title: "Facilities",
+        href: "/student-life/facilities",
+        description: "Modern campus amenities and resources",
+        image: "/hero_image_2.webp",
+      },
     ],
   },
   { title: "Boarding", href: "/boarding" },
@@ -33,6 +70,7 @@ const menuItems = [
 
 export default function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState("");
+  const [hoveredSubItem, setHoveredSubItem] = useState<number>(0);
   const [hasShadow, setHasShadow] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -43,6 +81,11 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Reset hovered sub item when dropdown changes
+  useEffect(() => {
+    setHoveredSubItem(0);
+  }, [dropdownOpen]);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -56,12 +99,18 @@ export default function Navbar() {
     };
   }, [mobileMenuOpen]);
 
+  // Get current dropdown menu
+  const currentDropdownMenu = menuItems.find(
+    (item) => item.subItems && item.title === dropdownOpen,
+  );
+
   return (
     <>
       <nav
         className={`bg-white fixed w-full z-50 top-0 transition-shadow duration-300 ${
           hasShadow ? "border-b border-gray-200/50" : ""
         }`}
+        onMouseLeave={() => setDropdownOpen("")}
       >
         <div className="container-lg mx-auto px-4 sm:px-6 lg:px-8 text-lg">
           <div className="flex flex-row-reverse md:flex-row justify-between items-center h-[100px]">
@@ -78,49 +127,48 @@ export default function Navbar() {
 
             {/* Logo */}
             <div className="flex items-center">
-              <Image
-                src="/school_logo_dark.svg"
-                alt="Unipix Logo"
-                width={120}
-                height={40}
-                className="h-10 w-auto"
-              />
+              <Link href="/">
+                <Image
+                  src="/school_logo_dark.svg"
+                  alt="Unipix Logo"
+                  width={120}
+                  height={40}
+                  className="h-10 w-auto"
+                />
+              </Link>
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex space-x-6 text-[15px] font-[500]">
+            <div className="hidden lg:flex items-center space-x-6 text-[15px] font-[500]">
               {menuItems.map((item, index) =>
                 item.subItems ? (
                   <div
                     key={index}
-                    className="relative group"
+                    className="relative"
                     onMouseEnter={() => setDropdownOpen(item.title)}
-                    onMouseLeave={() => setDropdownOpen("")}
                   >
-                    <button className="text-gray-700 text-[16px] font-[400] flex items-center gap-1">
-                      {item.title} <ChevronDown size={16} />
+                    <button
+                      className={`text-[16px] font-[400] flex items-center gap-1 py-10 transition-colors ${
+                        dropdownOpen === item.title
+                          ? "text-primary"
+                          : "text-gray-700"
+                      }`}
+                    >
+                      {item.title}
+                      <ChevronDown
+                        size={16}
+                        className={`transition-transform duration-200 ${
+                          dropdownOpen === item.title ? "rotate-180" : ""
+                        }`}
+                      />
                     </button>
-                    {dropdownOpen === item.title && (
-                      <div className="absolute top-full left-0 bg-white w-48 rounded pt9 -ml-5 font-[400]">
-                        <div className="mt-9 shadow-lg pb-2 z-20">
-                          {item.subItems.map((subItem, subIndex) => (
-                            <Link
-                              key={subIndex}
-                              href={subItem.href}
-                              className="block px-5 py-2 hover:bg-secondary"
-                            >
-                              {subItem.title}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    )}
                   </div>
                 ) : (
                   <Link
                     key={index}
                     href={item.href}
-                    className="text-gray-700 font-[400] text-[16px]"
+                    className="text-gray-700 font-[400] text-[16px] py-10"
+                    onMouseEnter={() => setDropdownOpen("")}
                   >
                     {item.title}
                   </Link>
@@ -159,6 +207,101 @@ export default function Navbar() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Full Width Mega Menu Dropdown */}
+        <div
+          className={`absolute left-0 right-0 bg-white border-t border-gray-100 shadow-lg transition-all duration-300 ${
+            dropdownOpen && currentDropdownMenu
+              ? "opacity-100 visible"
+              : "opacity-0 invisible pointer-events-none"
+          }`}
+        >
+          {currentDropdownMenu && (
+            <div className="container-lg mx-auto px-4 sm:px-6 lg:px-8 py-10">
+              <div className="max-w-full xl:max-w[85%] mx-auto">
+                <div className="grid grid-cols-[1.5fr_1fr] gap-12">
+                  {/* Left Side - Links */}
+                  <div>
+                    <h3 className="text-lg capitalize tracking-wider font-medium mb-6">
+                      {currentDropdownMenu.title}
+                    </h3>
+                    <div className="space-y-1">
+                      {currentDropdownMenu.subItems?.map(
+                        (subItem, subIndex) => (
+                          <Link
+                            key={subIndex}
+                            href={subItem.href}
+                            onMouseEnter={() => setHoveredSubItem(subIndex)}
+                            className={`group flex items-center justify-between p-4 rounded-[10px] transition-all duration-200 w-[60%] ${
+                              hoveredSubItem === subIndex
+                                ? "bg-secondary"
+                                : "hover:bg-gray-50"
+                            }`}
+                          >
+                            <div>
+                              <h4
+                                className={`text-[15px] tracking-wider font-medium transition-colors ${
+                                  hoveredSubItem === subIndex
+                                    ? "text-primary"
+                                    : "text-text-primary"
+                                }`}
+                              >
+                                {subItem.title}
+                              </h4>
+                              <p className="text-[13px] text-gray-500 mt-0.5">
+                                {subItem.description}
+                              </p>
+                            </div>
+                            <Icon
+                              icon="mdi:arrow-right"
+                              className={`w-5 h-5 transition-all duration-200 ${
+                                hoveredSubItem === subIndex
+                                  ? "text-primary opacity-100 translate-x-0"
+                                  : "text-gray-400 opacity-0 -translate-x-2"
+                              }`}
+                            />
+                          </Link>
+                        ),
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Right Side - Dynamic Image */}
+                  <div className="relative aspect-[16/10] overflow-hidden rounded-[10px]">
+                    {currentDropdownMenu.subItems?.map((subItem, subIndex) => (
+                      <div
+                        key={subIndex}
+                        className={`absolute inset-0 transition-opacity duration-300 ${
+                          hoveredSubItem === subIndex
+                            ? "opacity-100"
+                            : "opacity-0"
+                        }`}
+                      >
+                        <Image
+                          src={subItem.image}
+                          alt={subItem.title}
+                          fill
+                          className="object-cover"
+                        />
+                        {/* Gradient Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                        {/* Caption */}
+                        <div className="absolute bottom-0 left-0 right-0 p-6">
+                          <h4 className="text-xl font-medium text-white">
+                            {subItem.title}
+                          </h4>
+                          <p className="text-white/80 text-sm mt-1">
+                            {subItem.description}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 
@@ -225,7 +368,7 @@ export default function Navbar() {
                     <div
                       className={`overflow-hidden transition-all duration-200 ${
                         dropdownOpen === item.title
-                          ? "max-h-48 opacity-100"
+                          ? "max-h-60 opacity-100"
                           : "max-h-0 opacity-0"
                       }`}
                     >
