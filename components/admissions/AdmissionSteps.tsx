@@ -7,7 +7,7 @@ const AdmissionSteps = () => {
   const { steps } = admissionsContent;
 
   return (
-    <section className="bg-secondary py-16 md:py-24 px-4">
+    <section className="bgsecondary pb-16 md:pb-24 px-4">
       <div className="container-lg mx-auto">
         <div className="max-w-full xl:max-w-[85%] mx-auto">
           {/* Section Title */}
@@ -21,7 +21,7 @@ const AdmissionSteps = () => {
           </div>
 
           {/* Steps Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {steps.map((step, index) => (
               <div
                 key={step.step}
@@ -34,13 +34,13 @@ const AdmissionSteps = () => {
 
                 {/* Icon */}
                 <div className="mt-4 mb-6">
-                  <div className="w-16 h-16 bg-transparent border border-gray-300 rounded-[10px] flex items-center justify-center group-hover:border-primary transition-colors duration-300">
+                  <div className="w-16 h-16 bg-transparent bord border-gray-300 rounded-[10px] flex items-center justify-center group-hover:border-primary transition-colors duration-300">
                     <Icon icon={step.icon} className="w-8 h-8 text-primary" />
                   </div>
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-semibold text-text-primary mb-3">
+                <h3 className="text-xl font-medium text-text-primary mb-3">
                   {step.title}
                 </h3>
                 <p className="text-text-secondary leading-relaxed text-sm">

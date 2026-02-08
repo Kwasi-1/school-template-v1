@@ -117,7 +117,7 @@ const Footer = () => {
               Quick Links
             </h3>
             <div className="space-y-4">
-              <FooterButton href="/admissions" text="Apply Now" primary />
+              <FooterButton href="/apply" text="Apply Now" primary />
               <FooterButton href="/contact" text="Contact" />
             </div>
           </div>
