@@ -15,7 +15,7 @@ export default function FeesPage() {
     <div className="min-h-screen bg-white">
       {/* Overview Section */}
       <section className="container-lg mx-auto section-padding">
-        <div className="max-w-full xl:max-w-[85%] mx-auto py-16 md:py-24">
+        <div className="max-w-full xl:max-w-[85%] mx-auto py-16 md:pt-24 md:pb-0">
           <SectionHeader
             subtitle={overview.subtitle}
             title={overview.title}
@@ -42,7 +42,7 @@ export default function FeesPage() {
         subtitle="Ready to Enroll?"
         title="Start the Admission Process Today"
         primaryButtonText="Apply Now"
-        primaryButtonHref="/admissions"
+        primaryButtonHref="/apply"
         secondaryButtonText="Contact Us"
         secondaryButtonHref="/contact"
         variant="primary"

@@ -7,7 +7,7 @@ const FeeNotes = () => {
   const { notes } = feesContent;
 
   return (
-    <section className="bg-[#181818] py-12 px-4">
+    <section className="bg-dark py-12 px-4">
       <div className="container-lg mx-auto">
         <div className="max-w-full xl:max-w-[85%] mx-auto">
           <div className="flex items-start gap-4">
@@ -18,7 +18,7 @@ const FeeNotes = () => {
               />
             </div>
             <div>
-              <h3 className="text-white font-semibold mb-3">Important Notes</h3>
+              <h3 className="text-white font-medium mb-3">Important Notes</h3>
               <ul className="space-y-2">
                 {notes.map((note, idx) => (
                   <li

@@ -13,16 +13,16 @@ const FeeCard = ({ level, isActive, onClick }: FeeCardProps) => {
   return (
     <div
       onClick={onClick}
-      className={`rounded-2xl p-6 md:p-8 cursor-pointer transition-all duration-300 ${
+      className={`rounded-[10px] p-6 md:p-8 cursor-pointer transition-all duration-300 ${
         isActive
-          ? "bg-primary text-white shadow-lg scale-105"
-          : "bg-white border border-gray-100 hover:shadow-md hover:border-primary/20"
+          ? "bg-primary text-white shadow-lg"
+          : "bg-secondary borde border-gray-300 hover:border-primary/40"
       }`}
     >
       {/* Header */}
       <div className="mb-4">
         <h3
-          className={`text-xl font-semibold ${isActive ? "text-white" : "text-text-primary"}`}
+          className={`text-xl font-medium ${isActive ? "text-white" : "text-text-primary"}`}
         >
           {level.name}
         </h3>
@@ -36,7 +36,7 @@ const FeeCard = ({ level, isActive, onClick }: FeeCardProps) => {
       {/* Total */}
       {level.totalPerTerm && (
         <div
-          className={`border-t ${isActive ? "border-white/20" : "border-gray-100"} pt-4 mt-4`}
+          className={`border-t ${isActive ? "border-white/20" : "border-gray-300"} pt-4 mt-4`}
         >
           <p
             className={`text-sm ${isActive ? "text-white/70" : "text-text-secondary"}`}
@@ -44,7 +44,7 @@ const FeeCard = ({ level, isActive, onClick }: FeeCardProps) => {
             Starting from
           </p>
           <p
-            className={`text-2xl md:text-3xl font-semibold ${isActive ? "text-white" : "text-primary"}`}
+            className={`text-2xl md:text-3xl font-semibold ${isActive ? "text-white" : "text"}`}
           >
             {level.totalPerTerm}
             <span
@@ -60,7 +60,7 @@ const FeeCard = ({ level, isActive, onClick }: FeeCardProps) => {
       <div className="flex justify-end mt-4">
         <div
           className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
-            isActive ? "bg-white/20" : "bg-primary/10"
+            isActive ? "bg-white/20" : "bg-transparent border border-gray-300"
           }`}
         >
           <Icon
