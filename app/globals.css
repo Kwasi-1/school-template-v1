@@ -33,9 +33,8 @@
   --color-text-primary: #262626;
   --color-text-secondary: #737477;
   --color-text-muted: #9ca3af;
-}/* a:hover{
-  color: rgb(143, 9, 9);
-} */
+}
+
 .container-lg {
   width: 100%;
   max-width: 1440px;

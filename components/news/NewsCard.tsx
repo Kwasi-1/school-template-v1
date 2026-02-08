@@ -11,71 +11,50 @@ interface NewsCardProps {
 
 const NewsCard = ({ item }: NewsCardProps) => {
   return (
-    <article className="rounded-2xl overflow-hidden border border-gray-100 bg-white group hover:shadow-lg transition-shadow duration-300">
-      {/* Image */}
-      <div className="p-4 pb-0">
-        <div className="relative aspect-[16/10] rounded-xl overflow-hidden">
+    <article className="rounded-[10px] overflow-hidden border border-[#c2c2c2] group">
+      <div className="p-5">
+        {/* Image */}
+        <div className="relative w-full h-56 sm:h-60 lg:h-64 overflow-hidden rounded-lg">
           <Image
             src={item.image}
             alt={item.title}
             fill
             className="object-cover transform transition duration-500 ease-in-out group-hover:scale-105"
           />
-          {/* Type Badge */}
-          <div className="absolute top-3 left-3">
-            <span
-              className={`px-3 py-1 rounded-full text-xs font-medium ${
-                item.type === "event"
-                  ? "bg-primary text-white"
-                  : "bg-white text-gray-800"
-              }`}
-            >
-              {item.type === "event" ? "Event" : "News"}
+        </div>
+
+        <div className="pt-6">
+          {/* Date & Location */}
+          <div className="flex flex-col md:flex-row flex-wrap md:items-center text-[#110c2d] gap-3 text-sm">
+            <span className="flex items-center gap-1">
+              <Icon icon="mdi:calendar-month-outline" /> {item.date}
             </span>
+            {item.location && (
+              <span className="flex items-center gap-1">
+                <Icon icon="mdi:map-marker-outline" />
+                <span className="border-b border-dotted border-current pb-0.5">
+                  {item.location}
+                </span>
+              </span>
+            )}
           </div>
+
+          {/* Title */}
+          <h3 className="pb-4 pt-5 text-lg sm:text-xl lg:text-2xl leading-snug line-clamp-2">
+            {item.title}
+          </h3>
+
+          {/* Read More Button - Circular Arrow */}
+          <Link
+            href={`/news/${item.id}`}
+            className="group/btn mt-4 w-12 h-12 flex items-center justify-center border border-black/80 hover:border-primary rounded-full hover:text-white hover:bg-primary transition duration-300"
+          >
+            <Icon
+              icon="mdi:arrow-right"
+              className="-rotate-30 group-hover:rotate-0 text-base transition-transform duration-300"
+            />
+          </Link>
         </div>
-      </div>
-
-      {/* Content */}
-      <div className="p-5 pt-4">
-        {/* Meta Info */}
-        <div className="flex flex-wrap items-center gap-3 text-sm text-text-secondary mb-3">
-          <span className="flex items-center gap-1">
-            <Icon icon="mdi:calendar-month-outline" className="w-4 h-4" />
-            {item.date}
-          </span>
-          {item.location && (
-            <span className="flex items-center gap-1">
-              <Icon icon="mdi:map-marker-outline" className="w-4 h-4" />
-              {item.location}
-            </span>
-          )}
-          {item.author && (
-            <span className="flex items-center gap-1">
-              <Icon icon="mdi:account-outline" className="w-4 h-4" />
-              {item.author}
-            </span>
-          )}
-        </div>
-
-        {/* Title */}
-        <h3 className="text-lg md:text-xl font-semibold text-text-primary mb-2 line-clamp-2 group-hover:text-primary transition-colors">
-          {item.title}
-        </h3>
-
-        {/* Excerpt */}
-        <p className="text-text-secondary text-sm leading-relaxed line-clamp-2 mb-4">
-          {item.excerpt}
-        </p>
-
-        {/* Read More */}
-        <Link
-          href={`/news/${item.id}`}
-          className="inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline"
-        >
-          Read More
-          <Icon icon="mdi:arrow-right" className="w-4 h-4" />
-        </Link>
       </div>
     </article>
   );
