@@ -106,8 +106,8 @@ export const siteConfig: SiteConfig = {
 
   // Footer Navigation Links
   footerLinks: {
-    campus: ["Academic", "Athletics", "Campus Life", "Research", "Academic Area"],
-    pages: ["About", "Tuition Fee", "Alumni", "Faculty Staff", "Events"],
+    campus: ["Programs", "Admissions", "Fees", "Boarding"],
+    pages: ["About Us", "Student Life", "Gallery", "Events"],
   },
 };
 
