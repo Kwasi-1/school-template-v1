@@ -54,18 +54,8 @@ export default function Navbar() {
       }`}
     >
       <div className="container-lg mx-auto px-4 sm:px-6 lg:px-8 text-lg">
-        <div className="flex justify-between items-center h-[100px]">
-          {/* Logo */}
-          <div className="flex items-center">
-            <Image
-              src="/school_logo_dark.svg"
-              alt="Unipix Logo"
-              width={120}
-              height={40}
-              className="h-10 w-auto"
-            />
-          </div>
-
+        <div className="flex flex-row-reverse md:flex-row justify-between items-center h-[100px]">
+          {/* Mobile Menu Button */}
           <div className="lg:hidden">
             <Sheet>
               <SheetTrigger asChild>
@@ -129,6 +119,17 @@ export default function Navbar() {
                 </nav>
               </SheetContent>
             </Sheet>
+          </div>
+
+          {/* Logo */}
+          <div className="flex items-center">
+            <Image
+              src="/school_logo_dark.svg"
+              alt="Unipix Logo"
+              width={120}
+              height={40}
+              className="h-10 w-auto"
+            />
           </div>
 
           {/* Desktop Navigation */}
