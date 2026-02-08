@@ -26,7 +26,7 @@ const GalleryImage = ({ image, onClick }: GalleryImageProps) => {
       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300 flex items-center justify-center">
         <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
           <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-2">
-            <Icon icon="mdi:magnify-plus" className="w-6 h-6 text-[#800020]" />
+            <Icon icon="mdi:magnify-plus" className="w-6 h-6 text-primary" />
           </div>
           {image.caption && (
             <p className="text-white text-sm px-4 mt-3">{image.caption}</p>

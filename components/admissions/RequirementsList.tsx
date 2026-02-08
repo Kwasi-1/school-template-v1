@@ -14,7 +14,7 @@ const RequirementsList = () => {
         <div className="max-w-full xl:max-w-[85%] mx-auto">
           {/* Section Title */}
           <div className="text-center mb-12 md:mb-16">
-            <span className="text-sm uppercase tracking-wider font-medium text-[#800020]">
+            <span className="text-sm uppercase tracking-wider font-medium text-primary">
               What You Need
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mt-2">
@@ -30,8 +30,8 @@ const RequirementsList = () => {
                 onClick={() => setActiveLevel(index)}
                 className={`px-5 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
                   activeLevel === index
-                    ? "bg-[#800020] text-white"
-                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                    ? "bg-primary text-white"
+                    : "bg-secondary text-gray-700 hover:bg-gray-200"
                 }`}
               >
                 {level.level.split(" (")[0]}
@@ -43,7 +43,7 @@ const RequirementsList = () => {
           <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
             <div className="grid md:grid-cols-2">
               {/* Left: Level Info */}
-              <div className="bg-[#800020] text-white p-8 md:p-12">
+              <div className="bg-primary text-white p-8 md:p-12">
                 <h3 className="text-2xl md:text-3xl font-semibold mb-2">
                   {levels[activeLevel].level}
                 </h3>
@@ -72,7 +72,7 @@ const RequirementsList = () => {
 
               {/* Right: Requirements */}
               <div className="p-8 md:p-12">
-                <h4 className="text-lg font-semibold mb-6 flex items-center gap-2 text-[#800020]">
+                <h4 className="text-lg font-semibold mb-6 flex items-center gap-2 text-primary">
                   <Icon icon="mdi:clipboard-check-outline" />
                   Entry Requirements
                 </h4>
@@ -80,12 +80,12 @@ const RequirementsList = () => {
                   {levels[activeLevel].requirements.map((req, idx) => (
                     <li
                       key={idx}
-                      className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl"
+                      className="flex items-start gap-4 p-4 bg-secondary rounded-xl"
                     >
-                      <div className="w-8 h-8 bg-[#800020]/10 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
                         <Icon
                           icon="mdi:check"
-                          className="w-4 h-4 text-[#800020]"
+                          className="w-4 h-4 text-primary"
                         />
                       </div>
                       <span className="text-gray-700">{req}</span>

@@ -27,7 +27,7 @@ const SectionHeader = ({
       {subtitle && (
         <span
           className={`text-sm uppercase tracking-wider font-medium ${
-            light ? "text-white/80" : "text-[#800020]"
+            light ? "text-white/80" : "text-primary"
           }`}
         >
           {subtitle}
@@ -40,7 +40,7 @@ const SectionHeader = ({
         <div>
           <h2
             className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mt-2 ${
-              light ? "text-white" : "text-black"
+              light ? "text-white" : "text-text-primary"
             }`}
           >
             {title}
@@ -49,7 +49,7 @@ const SectionHeader = ({
           {description && (
             <p
               className={`mt-4 max-w-2xl text-base leading-relaxed ${
-                light ? "text-white/80" : "text-[#737477]"
+                light ? "text-white/80" : "text-text-secondary"
               }`}
             >
               {description}
@@ -61,7 +61,7 @@ const SectionHeader = ({
           <Link
             href={ctaHref}
             className={`inline-flex items-center gap-2 font-medium underline hover:no-underline transition ${
-              light ? "text-white" : "text-[#800020]"
+              light ? "text-white" : "text-primary"
             }`}
           >
             {ctaText}

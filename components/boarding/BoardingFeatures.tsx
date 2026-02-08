@@ -8,7 +8,7 @@ const BoardingFeatures = () => {
   const { features, brochure } = boardingContent;
 
   return (
-    <section className="py-16 md:py-24 px-4 bg-gray-50">
+    <section className="py-16 md:py-24 px-4 bg-secondary">
       <div className="container-lg mx-auto">
         <div className="max-w-full xl:max-w-[85%] mx-auto">
           {/* Features Grid */}
@@ -18,16 +18,16 @@ const BoardingFeatures = () => {
                 key={idx}
                 className="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-lg transition-shadow duration-300"
               >
-                <div className="w-14 h-14 bg-[#800020]/10 rounded-xl flex items-center justify-center mb-4">
+                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                   <Icon
                     icon={feature.icon}
-                    className="w-7 h-7 text-[#800020]"
+                    className="w-7 h-7 text-primary"
                   />
                 </div>
-                <h3 className="text-lg font-semibold text-black mb-2">
+                <h3 className="text-lg font-semibold text-text-primary mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-[#737477] text-sm leading-relaxed">
+                <p className="text-text-secondary text-sm leading-relaxed">
                   {feature.description}
                 </p>
               </div>

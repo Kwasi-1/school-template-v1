@@ -26,7 +26,7 @@ const events = [
 
 export default function UpcomingEvents() {
   return (
-    <section className="py-16 lg:py-24 px-4 sm:px-6 2xl:px-16 bg-gray-100">
+    <section className="py-16 lg:py-24 px-4 sm:px-6 2xl:px-16 bg-secondary">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start lg:items-center gap-4">
@@ -35,7 +35,7 @@ export default function UpcomingEvents() {
           </h2>
           <a
             href="#"
-            className="text-[#800020] font-medium underline flex items-center gap-1 hover:text-[#66001a] transition"
+            className="text-primary font-medium underline flex items-center gap-1 hover:text-[#66001a] transition"
           >
             View All <Icon icon="mdi:arrow-right" />
           </a>

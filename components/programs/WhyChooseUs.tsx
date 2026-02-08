@@ -7,7 +7,7 @@ const WhyChooseUs = () => {
   const { whyChooseUs } = programsContent;
 
   return (
-    <section className="bg-[#800020] py-16 md:py-24 px-4">
+    <section className="bg-primary py-16 md:py-24 px-4">
       <div className="container-lg mx-auto">
         <div className="max-w-full xl:max-w-[85%] mx-auto">
           {/* Section Title */}

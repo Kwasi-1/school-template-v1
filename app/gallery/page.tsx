@@ -59,7 +59,7 @@ export default function GalleryPage() {
       </section>
 
       {/* Filter & Grid */}
-      <section className="bg-gray-50 py-16 md:py-24 px-4">
+      <section className="bg-secondary py-16 md:py-24 px-4">
         <div className="container-lg mx-auto">
           <div className="max-w-full xl:max-w-[85%] mx-auto">
             {/* Filter */}

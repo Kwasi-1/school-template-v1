@@ -79,13 +79,13 @@ const ApplicationForm = () => {
             <h2 className="text-3xl font-semibold mb-4">
               Application Submitted!
             </h2>
-            <p className="text-[#737477] mb-8">
+            <p className="text-text-secondary mb-8">
               Thank you for applying to {schoolConfig.name}. We have received
               your application and will contact you within 5-7 business days.
             </p>
             <a
               href="/"
-              className="inline-flex items-center gap-2 bg-[#800020] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#66001a] transition"
+              className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-[#66001a] transition"
             >
               Return Home
             </a>
@@ -101,13 +101,13 @@ const ApplicationForm = () => {
         <div className="max-w-full xl:max-w-[85%] mx-auto">
           {/* Section Title */}
           <div className="text-center mb-12 md:mb-16">
-            <span className="text-sm uppercase tracking-wider font-medium text-[#800020]">
+            <span className="text-sm uppercase tracking-wider font-medium text-primary">
               Start Your Journey
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mt-2">
               Apply Online
             </h2>
-            <p className="mt-4 text-[#737477] max-w-2xl mx-auto">
+            <p className="mt-4 text-text-secondary max-w-2xl mx-auto">
               Complete the form below to begin your application. Application
               fee: {admissionsContent.applicationFee}
             </p>
@@ -118,7 +118,7 @@ const ApplicationForm = () => {
             <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 md:p-10">
               {/* Student Information */}
               <div className="mb-10">
-                <h3 className="text-xl font-semibold mb-6 flex items-center gap-2 text-[#800020]">
+                <h3 className="text-xl font-semibold mb-6 flex items-center gap-2 text-primary">
                   <Icon icon="mdi:account-school" />
                   Student Information
                 </h3>
@@ -134,7 +134,7 @@ const ApplicationForm = () => {
                       value={formData.studentFirstName}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#800020] focus:ring-2 focus:ring-[#800020]/20 outline-none transition"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-[#800020]/20 outline-none transition"
                       placeholder="Enter first name"
                     />
                   </div>
@@ -149,7 +149,7 @@ const ApplicationForm = () => {
                       value={formData.studentLastName}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#800020] focus:ring-2 focus:ring-[#800020]/20 outline-none transition"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-[#800020]/20 outline-none transition"
                       placeholder="Enter last name"
                     />
                   </div>
@@ -164,7 +164,7 @@ const ApplicationForm = () => {
                       value={formData.dateOfBirth}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#800020] focus:ring-2 focus:ring-[#800020]/20 outline-none transition"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-[#800020]/20 outline-none transition"
                     />
                   </div>
 
@@ -177,7 +177,7 @@ const ApplicationForm = () => {
                       value={formData.gender}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#800020] focus:ring-2 focus:ring-[#800020]/20 outline-none transition"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-[#800020]/20 outline-none transition"
                     >
                       <option value="">Select gender</option>
                       <option value="male">Male</option>
@@ -194,7 +194,7 @@ const ApplicationForm = () => {
                       value={formData.level}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#800020] focus:ring-2 focus:ring-[#800020]/20 outline-none transition"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-[#800020]/20 outline-none transition"
                     >
                       <option value="">Select level/class</option>
                       {admissionsContent.levels.map((level, idx) => (
@@ -209,7 +209,7 @@ const ApplicationForm = () => {
 
               {/* Parent/Guardian Information */}
               <div className="mb-10">
-                <h3 className="text-xl font-semibold mb-6 flex items-center gap-2 text-[#800020]">
+                <h3 className="text-xl font-semibold mb-6 flex items-center gap-2 text-primary">
                   <Icon icon="mdi:account-child" />
                   Parent/Guardian Information
                 </h3>
@@ -225,7 +225,7 @@ const ApplicationForm = () => {
                       value={formData.parentName}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#800020] focus:ring-2 focus:ring-[#800020]/20 outline-none transition"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-[#800020]/20 outline-none transition"
                       placeholder="Enter parent/guardian name"
                     />
                   </div>
@@ -239,7 +239,7 @@ const ApplicationForm = () => {
                       value={formData.relationship}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#800020] focus:ring-2 focus:ring-[#800020]/20 outline-none transition"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-[#800020]/20 outline-none transition"
                     >
                       <option value="">Select relationship</option>
                       <option value="father">Father</option>
@@ -259,7 +259,7 @@ const ApplicationForm = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#800020] focus:ring-2 focus:ring-[#800020]/20 outline-none transition"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-[#800020]/20 outline-none transition"
                       placeholder="e.g., 024 123 4567"
                     />
                   </div>
@@ -274,7 +274,7 @@ const ApplicationForm = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#800020] focus:ring-2 focus:ring-[#800020]/20 outline-none transition"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-[#800020]/20 outline-none transition"
                       placeholder="Enter email address"
                     />
                   </div>
@@ -289,7 +289,7 @@ const ApplicationForm = () => {
                       value={formData.address}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#800020] focus:ring-2 focus:ring-[#800020]/20 outline-none transition"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-[#800020]/20 outline-none transition"
                       placeholder="Enter residential address"
                     />
                   </div>
@@ -298,7 +298,7 @@ const ApplicationForm = () => {
 
               {/* Additional Information */}
               <div className="mb-10">
-                <h3 className="text-xl font-semibold mb-6 flex items-center gap-2 text-[#800020]">
+                <h3 className="text-xl font-semibold mb-6 flex items-center gap-2 text-primary">
                   <Icon icon="mdi:information-outline" />
                   Additional Information
                 </h3>
@@ -313,7 +313,7 @@ const ApplicationForm = () => {
                       name="previousSchool"
                       value={formData.previousSchool}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#800020] focus:ring-2 focus:ring-[#800020]/20 outline-none transition"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-[#800020]/20 outline-none transition"
                       placeholder="Enter previous school name"
                     />
                   </div>
@@ -327,7 +327,7 @@ const ApplicationForm = () => {
                       value={formData.message}
                       onChange={handleChange}
                       rows={4}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#800020] focus:ring-2 focus:ring-[#800020]/20 outline-none transition resize-none"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-[#800020]/20 outline-none transition resize-none"
                       placeholder="Any additional information you'd like to share..."
                     />
                   </div>
@@ -336,7 +336,7 @@ const ApplicationForm = () => {
 
               {/* Submit Button */}
               <div className="flex flex-col sm:flex-row gap-4 items-center justify-between pt-6 border-t border-gray-100">
-                <p className="text-sm text-[#737477]">
+                <p className="text-sm text-text-secondary">
                   <Icon
                     icon="mdi:information-outline"
                     className="inline mr-1"
@@ -347,7 +347,7 @@ const ApplicationForm = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="inline-flex items-center justify-center gap-2 bg-[#800020] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#66001a] disabled:opacity-50 disabled:cursor-not-allowed transition w-full sm:w-auto"
+                  className="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-[#66001a] disabled:opacity-50 disabled:cursor-not-allowed transition w-full sm:w-auto"
                 >
                   {isSubmitting ? (
                     <>

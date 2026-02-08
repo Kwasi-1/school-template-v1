@@ -18,7 +18,7 @@ export default function TuitionFees() {
               high-quality education that is accessible to a diverse range of
               students.
             </p>
-            <button className="mt-6 bg-[#800020] text-white font-medium px-6 py-3 rounded-full flex items-center gap-2 hover:bg-[#66001a] transition">
+            <button className="mt-6 bg-primary text-white font-medium px-6 py-3 rounded-full flex items-center gap-2 hover:bg-[#66001a] transition">
               Plan Details →
             </button>
           </div>
@@ -26,7 +26,7 @@ export default function TuitionFees() {
           {/* Tuition Cards */}
           {/* Undergraduate Programs */}
           <div className="col-span-2 flex flex-col md:flex-row gap-6 w-full">
-            <div className="flex-1 bg-[#800020] text-white rounded-[10px] p-[40px] md:w-1/2">
+            <div className="flex-1 bg-primary text-white rounded-[10px] p-[40px] md:w-1/2">
               <h3 className="text-3xl">Undergraduate Programs</h3>
 
               <div className="mt-4">
@@ -49,7 +49,7 @@ export default function TuitionFees() {
             </div>
 
             {/* Graduate Programs */}
-            <div className="flex-1 bg-gray-100 text-black rounded-[10px] p-[40px] md:w-1/2">
+            <div className="flex-1 bg-secondary text-text-primary rounded-[10px] p-[40px] md:w-1/2">
               <h3 className="text-3xl ">Graduate Programs</h3>
 
               <div className="mt-4">

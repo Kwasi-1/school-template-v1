@@ -16,7 +16,7 @@ const contactDetails = [
 ];
 
 const ContactCard = ({ alt, info }: { alt: string; info: string[] }) => (
-  <div className="bg-gray-100 px-8 py-12 flex flex-col items-center text-center">
+  <div className="bg-secondary px-8 py-12 flex flex-col items-center text-center">
     {alt === "Clock" && (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -99,7 +99,7 @@ const ContactCard = ({ alt, info }: { alt: string; info: string[] }) => (
     )}
     <div className="mt-8">
       {info.map((line, index) => (
-        <p key={index} className="text-[20px] text-black font-medium">
+        <p key={index} className="text-[20px] text-text-primary font-medium">
           {line}
         </p>
       ))}
@@ -111,7 +111,7 @@ const ContactSection = () => {
   return (
     <section className="pt-[120px] pb-[100px] container-lg mx-auto px-4 md:px-8">
       <div className="max-w-full xl:max-w-[85%] mx-auto text-center">
-        <h2 className="text-3xl md:text-5xl text-black mb-12">
+        <h2 className="text-3xl md:text-5xl text-text-primary mb-12">
           General Contact Information
         </h2>
 

@@ -42,7 +42,7 @@ export default function Programs() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-normal">
             Our Programs
           </h2>
-          <p className="mt-6 text-[#737477] leading-relaxed text-base">
+          <p className="mt-6 text-text-secondary leading-relaxed text-base">
             Embark on a journey of knowledge, discovery, and growth at Unipix
             University. Our admissions process is designed to identify bright,
             motivated individuals who are eager to contribute to our dynamic

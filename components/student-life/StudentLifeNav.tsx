@@ -63,8 +63,8 @@ const StudentLifeNav = () => {
               onClick={() => scrollToSection(section.id)}
               className={`px-4 py-2 text-sm md:text-base font-medium whitespace-nowrap rounded-md transition-all duration-300 ${
                 activeSection === section.id
-                  ? "bg-[#800020] text-white"
-                  : "text-gray-600 hover:text-[#800020] hover:bg-gray-100 border border-gray-200"
+                  ? "bg-primary text-primary-foreground"
+                  : "text-text-secondary hover:text-primary hover:bg-secondary border border-gray-200"
               }`}
             >
               {section.title}

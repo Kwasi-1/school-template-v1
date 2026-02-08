@@ -42,7 +42,7 @@ const PersonalInfoForm = ({ title }: PersonalInfoFormProps) => {
 
   return (
     <section className="container mx-auto">
-      <h2 className="text-2xl text-black mb-6 capitalize tracking-wide">
+      <h2 className="text-2xl text-text-primary mb-6 capitalize tracking-wide">
         {title}
       </h2>
 
@@ -90,7 +90,7 @@ const PersonalInfoForm = ({ title }: PersonalInfoFormProps) => {
 
         {/* Gender Dropdown */}
         <div>
-          <label className="block text-base font-semibold text-black">
+          <label className="block text-base font-semibold text-text-primary">
             Gender <span className="text-[#890c25]">*</span>
           </label>
           <select

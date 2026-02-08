@@ -152,7 +152,7 @@ export default function Navbar() {
                           <Link
                             key={subIndex}
                             href={subItem.href}
-                            className="block px-5 py-2 hover:bg-gray-100"
+                            className="block px-5 py-2 hover:bg-secondary"
                           >
                             {subItem.title}
                           </Link>

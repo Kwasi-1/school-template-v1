@@ -9,7 +9,7 @@ import StatsSection from "@/components/about/StatsSection";
 
 function page() {
   return (
-    <div className="text-[#737477]">
+    <div className="text-text-secondary">
       <AboutSection />
       <HistorySection />
       <StatsSection />

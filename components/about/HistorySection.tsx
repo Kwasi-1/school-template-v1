@@ -19,7 +19,7 @@ const HistorySection = () => {
 
         {/* Text Content */}
         <div>
-          <h2 className="text-4xl text-black">The history of Unipix</h2>
+          <h2 className="text-4xl text-text-primary">The history of Unipix</h2>
           <p className=" leading-relaxed mt-8">
             On September 8, 1971, Unipix, the first college in the American
             colonies, was founded in Cambridge, Massachusetts. Unipix University

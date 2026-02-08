@@ -13,20 +13,20 @@ const ScholarshipSection = () => {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left: Info */}
             <div>
-              <span className="text-sm uppercase tracking-wider font-medium text-[#800020]">
+              <span className="text-sm uppercase tracking-wider font-medium text-primary">
                 Financial Support
               </span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mt-2 mb-4">
                 {scholarships.title}
               </h2>
-              <p className="text-[#737477] leading-relaxed mb-8">
+              <p className="text-text-secondary leading-relaxed mb-8">
                 {scholarships.description}
               </p>
 
               {/* Apply CTA */}
               <a
                 href="/admissions"
-                className="inline-flex items-center gap-2 bg-[#800020] text-white px-6 py-3 rounded-full font-medium hover:bg-[#66001a] transition"
+                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full font-medium hover:bg-[#66001a] transition"
               >
                 Apply for Scholarship
                 <Icon icon="mdi:arrow-right" />
@@ -38,16 +38,16 @@ const ScholarshipSection = () => {
               {scholarships.types.map((type, index) => (
                 <div
                   key={index}
-                  className="bg-gray-50 rounded-xl p-5 hover:bg-gray-100 transition-colors duration-300"
+                  className="bg-secondary rounded-xl p-5 hover:bg-secondary transition-colors duration-300"
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1">
-                      <h3 className="font-semibold text-black mb-1">
+                      <h3 className="font-semibold text-text-primary mb-1">
                         {type.name}
                       </h3>
-                      <p className="text-sm text-[#737477]">{type.criteria}</p>
+                      <p className="text-sm text-text-secondary">{type.criteria}</p>
                     </div>
-                    <div className="flex-shrink-0 bg-[#800020]/10 text-[#800020] px-3 py-1 rounded-full text-sm font-medium">
+                    <div className="flex-shrink-0 bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
                       {type.discount}
                     </div>
                   </div>

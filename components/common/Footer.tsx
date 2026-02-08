@@ -26,7 +26,7 @@ const Footer = () => {
   const isLandingPage = pathname === "/";
 
   return (
-    <div className="bg-gray-100">
+    <div className="bg-secondary">
       {isLandingPage && (
         <div className="relative container-lg mx-auto px-4">
           <div
@@ -40,8 +40,8 @@ const Footer = () => {
           >
             {/* Heading */}
             <h2 className="text-2xl md:text-3xl lg:text-4xl leading-snug lg:leading-snug">
-              Don’t Miss Awesome Story <br className="hidden md:block" /> From
-              Our Alumni
+              Don't Miss Awesome Story <br className="hidden md:block" />
+              From Our Alumni
             </h2>
 
             {/* Input + Button */}
@@ -53,7 +53,7 @@ const Footer = () => {
                   className="bg-transparent text-white placeholder-white outline-none w-full"
                 />
               </div>
-              <button className="bg-white hover:bg-black text-red-800 hover:text-white font-semibold px-6 py-3 rounded-full flex items-center justify-center transition duration-300 w-full sm:w-auto">
+              <button className="bg-white hover:bg-dark text-primary hover:text-white font-semibold px-6 py-3 rounded-full flex items-center justify-center transition duration-300 w-full sm:w-auto">
                 Subscribe
                 <Icon icon="mdi:arrow-right" className="text-xl ml-2" />
               </button>
@@ -63,14 +63,14 @@ const Footer = () => {
       )}
 
       <footer
-        className={`bg-[#181818] text-[#737477] ${
+        className={`bg-footer text-footer-muted ${
           isLandingPage && "pt-[60px]"
         }`}
       >
         <div className="w-[90%] container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-6 md:px-20 py-[100px]">
           {/* Logo and Info Section */}
           <div>
-            <h2 className="text-2xl font-semibold underline text-white">
+            <h2 className="text-2xl font-semibold underline text-footer-foreground">
               <SchoolLogo />
             </h2>
             <p className="mt-4">
@@ -89,16 +89,16 @@ const Footer = () => {
                 </div>
               </div>
             ) : (
-              <div className="flex space-x-3 text-white mt-8">
+              <div className="flex space-x-3 text-footer-foreground mt-8">
                 {socialLinks.map(({ icon, href }, idx) => (
                   <Link
                     key={idx}
                     href={href}
-                    className="border p-2 rounded-full hover:bg-[#800020] hover:border-[#800020] transition duration-300"
+                    className="border p-2 rounded-full hover:bg-primary hover:border-primary transition duration-300"
                   >
                     <Icon
                       icon={icon}
-                      className="hover:text-primary cursor-pointer"
+                      className="hover:text-primary-foreground cursor-pointer"
                       width="22"
                     />
                   </Link>
@@ -115,7 +115,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-3 underline text-white">
+            <h3 className="text-lg font-semibold mb-3 underline text-footer-foreground">
               Quick Links
             </h3>
             <div className="space-y-4">
@@ -129,7 +129,7 @@ const Footer = () => {
         <div className="text-center border-t border-stone-700/20 py-6">
           <p>
             Copyright &copy; {new Date().getFullYear()}. All Rights Reserved by
-            <span className="text-white"> Unipix</span>
+            <span className="text-footer-foreground"> Unipix</span>
           </p>
         </div>
       </footer>
@@ -140,7 +140,9 @@ const Footer = () => {
 // Reusable List Component
 const FooterList = ({ title, links }: { title: string; links: string[] }) => (
   <div>
-    <h3 className="text-lg font-semibold mb-3 underline text-white">{title}</h3>
+    <h3 className="text-lg font-semibold mb-3 underline text-footer-foreground">
+      {title}
+    </h3>
     <div className="flex flex-col space-y-2 capitalize">
       {links.map((link, idx) => (
         <Link href={link} key={idx}>
@@ -165,8 +167,8 @@ const FooterButton = ({
     href={href}
     className={`w-full py-3 rounded-full text-center font-semibold transition duration-300 block ${
       primary
-        ? "bg-[#800020] text-white hover:bg-[#66001a]"
-        : "border border-white text-white hover:bg-[#800020] hover:border-[#800020]"
+        ? "bg-primary text-primary-foreground hover:bg-primary-hover"
+        : "border border-footer-foreground text-footer-foreground hover:bg-primary hover:border-primary"
     }`}
   >
     {text}

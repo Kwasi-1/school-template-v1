@@ -19,8 +19,8 @@ const NewsFilter = ({ activeFilter, onFilterChange }: NewsFilterProps) => {
           onClick={() => onFilterChange(category)}
           className={`px-5 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
             activeFilter === category
-              ? "bg-[#800020] text-white"
-              : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+              ? "bg-primary text-white"
+              : "bg-secondary text-gray-700 hover:bg-gray-200"
           }`}
         >
           {category}

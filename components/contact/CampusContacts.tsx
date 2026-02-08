@@ -31,7 +31,7 @@ const CampusContacts = () => {
   return (
     <section className="pb-[100px] container-lg mx-auto px-4 md:px-8">
       <div className="max-w-full xl:w-[85%] mx-auto text-center">
-        <h2 className="text-3xl md:text-5xl text-black mb-[50px]">
+        <h2 className="text-3xl md:text-5xl text-text-primary mb-[50px]">
           Other Campus Contacts
         </h2>
 

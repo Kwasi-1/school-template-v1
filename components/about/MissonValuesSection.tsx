@@ -41,7 +41,7 @@ const ValueCard = ({
   align?: string;
 }) => (
   <div className={`${align} space-y-3 mt-[70px]`}>
-    <h3 className="text-2xl text-black">{title}</h3>
+    <h3 className="text-2xl text-text-primary">{title}</h3>
     <p
       className={`text-[16px] w-[65%] ${align === "text-right" && " ml-auto"}`}
     >
@@ -60,7 +60,7 @@ const ValueCard = ({
 const MissionValuesSection = () => {
   return (
     <section className="w-[85%] container mx-auto py-[100px]">
-      <h2 className="text-center text-[40px] text-black  mb-10">
+      <h2 className="text-center text-[40px] text-text-primary  mb-10">
         Mission and Values
       </h2>
 

@@ -28,7 +28,7 @@ const FeaturedPost = ({ item }: FeaturedPostProps) => {
         <div className="max-w-3xl">
           {/* Badges */}
           <div className="flex flex-wrap gap-3 mb-4">
-            <span className="px-3 py-1 bg-[#800020] text-white text-xs font-medium rounded-full">
+            <span className="px-3 py-1 bg-primary text-white text-xs font-medium rounded-full">
               Featured
             </span>
             <span className="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-medium rounded-full">
@@ -63,7 +63,7 @@ const FeaturedPost = ({ item }: FeaturedPostProps) => {
             )}
             <Link
               href={`/news/${item.id}`}
-              className="inline-flex items-center gap-2 bg-white text-[#800020] px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition"
+              className="inline-flex items-center gap-2 bg-white text-primary px-5 py-2 rounded-full text-sm font-medium hover:bg-secondary transition"
             >
               Read More
               <Icon icon="mdi:arrow-right" />

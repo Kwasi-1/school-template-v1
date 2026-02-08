@@ -32,7 +32,7 @@ const BoardingVideo = () => {
         >
           <Icon
             icon="mdi:play"
-            className="w-10 h-10 md:w-12 md:h-12 text-[#800020] ml-1"
+            className="w-10 h-10 md:w-12 md:h-12 text-primary ml-1"
           />
         </a>
 

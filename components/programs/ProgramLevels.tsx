@@ -7,12 +7,12 @@ const ProgramLevels = () => {
   const { levels } = programsContent;
 
   return (
-    <section className="bg-gray-50 py-16 md:py-24 px-4">
+    <section className="bg-secondary py-16 md:py-24 px-4">
       <div className="container-lg mx-auto">
         <div className="max-w-full xl:max-w-[85%] mx-auto">
           {/* Section Title */}
           <div className="text-center mb-16 md:mb-20">
-            <span className="text-sm uppercase tracking-wider font-medium text-[#800020]">
+            <span className="text-sm uppercase tracking-wider font-medium text-primary">
               Academic Levels
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mt-2">

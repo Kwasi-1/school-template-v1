@@ -26,7 +26,7 @@ const NewsCard = ({ item }: NewsCardProps) => {
             <span
               className={`px-3 py-1 rounded-full text-xs font-medium ${
                 item.type === "event"
-                  ? "bg-[#800020] text-white"
+                  ? "bg-primary text-white"
                   : "bg-white text-gray-800"
               }`}
             >
@@ -39,7 +39,7 @@ const NewsCard = ({ item }: NewsCardProps) => {
       {/* Content */}
       <div className="p-5 pt-4">
         {/* Meta Info */}
-        <div className="flex flex-wrap items-center gap-3 text-sm text-[#737477] mb-3">
+        <div className="flex flex-wrap items-center gap-3 text-sm text-text-secondary mb-3">
           <span className="flex items-center gap-1">
             <Icon icon="mdi:calendar-month-outline" className="w-4 h-4" />
             {item.date}
@@ -59,19 +59,19 @@ const NewsCard = ({ item }: NewsCardProps) => {
         </div>
 
         {/* Title */}
-        <h3 className="text-lg md:text-xl font-semibold text-black mb-2 line-clamp-2 group-hover:text-[#800020] transition-colors">
+        <h3 className="text-lg md:text-xl font-semibold text-text-primary mb-2 line-clamp-2 group-hover:text-primary transition-colors">
           {item.title}
         </h3>
 
         {/* Excerpt */}
-        <p className="text-[#737477] text-sm leading-relaxed line-clamp-2 mb-4">
+        <p className="text-text-secondary text-sm leading-relaxed line-clamp-2 mb-4">
           {item.excerpt}
         </p>
 
         {/* Read More */}
         <Link
           href={`/news/${item.id}`}
-          className="inline-flex items-center gap-2 text-[#800020] font-medium text-sm hover:underline"
+          className="inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline"
         >
           Read More
           <Icon icon="mdi:arrow-right" className="w-4 h-4" />

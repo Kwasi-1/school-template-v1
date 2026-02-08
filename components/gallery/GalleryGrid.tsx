@@ -12,7 +12,7 @@ const GalleryGrid = ({ images, onImageClick }: GalleryGridProps) => {
   if (images.length === 0) {
     return (
       <div className="text-center py-16">
-        <p className="text-[#737477] text-lg">
+        <p className="text-text-secondary text-lg">
           No images found in this category.
         </p>
       </div>

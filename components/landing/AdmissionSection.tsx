@@ -9,7 +9,7 @@ const AdmissionSection = () => {
       <div className="max-w-full xl:max-w-[85%] mx-auto">
         {/* Heading */}
         <div className="text-center mb-8">
-          <h2 className="text-4xl font-semibold text-black">
+          <h2 className="text-4xl font-semibold text-text-primary">
             Apply For Admission
           </h2>
           <p className="text-gray-600 mt-2">

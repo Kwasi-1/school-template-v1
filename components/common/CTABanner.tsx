@@ -26,8 +26,8 @@ const CTABanner = ({
   variant = "primary",
 }: CTABannerProps) => {
   const bgClasses = {
-    primary: "bg-[#800020]",
-    dark: "bg-[#181818]",
+    primary: "bg-primary",
+    dark: "bg-footer",
     image: "bg-black/60",
   };
 
@@ -55,19 +55,19 @@ const CTABanner = ({
           {/* Content */}
           <div className="relative z-10 py-12 md:py-16 px-6 md:px-12 lg:px-20 text-center">
             {subtitle && (
-              <span className="text-white/80 text-sm uppercase tracking-wider">
+              <span className="text-primary-foreground/80 text-sm uppercase tracking-wider">
                 {subtitle}
               </span>
             )}
 
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white mt-3 max-w-3xl mx-auto leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-primary-foreground mt-3 max-w-3xl mx-auto leading-tight">
               {title}
             </h2>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
               <Link
                 href={primaryButtonHref}
-                className="inline-flex items-center justify-center gap-2 bg-white text-[#800020] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition duration-300"
+                className="inline-flex items-center justify-center gap-2 bg-white text-primary px-8 py-4 rounded-full font-semibold hover:bg-secondary transition duration-300"
               >
                 {primaryButtonText}
                 <Icon icon="mdi:arrow-right" />
@@ -76,7 +76,7 @@ const CTABanner = ({
               {secondaryButtonText && secondaryButtonHref && (
                 <Link
                   href={secondaryButtonHref}
-                  className="inline-flex items-center justify-center gap-2 border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#800020] transition duration-300"
+                  className="inline-flex items-center justify-center gap-2 border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-primary transition duration-300"
                 >
                   {secondaryButtonText}
                 </Link>
