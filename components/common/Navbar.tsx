@@ -18,7 +18,9 @@ const menuItems = [
     title: "About",
     subItems: [
       { title: "About Us", href: "/about" },
-      { title: "Gallery", href: "/gallery" },
+      // { title: "Our History", href: "/history" },
+      { title: "Student Life", href: "/student-life" },
+      { title: "Boarding", href: "/boarding" },
     ],
   },
   {
@@ -48,7 +50,7 @@ export default function Navbar() {
   return (
     <nav
       className={`bg-white fixed w-full z-50 top-0 transition-shadow duration-300 ${
-        hasShadow ? "shadow-xs" : ""
+        hasShadow ? "shadowxs border-b border-gray-200/50" : ""
       }`}
     >
       <div className="container-lg mx-auto px-4 sm:px-6 lg:px-8 text-lg">
@@ -140,7 +142,7 @@ export default function Navbar() {
                   onMouseEnter={() => setDropdownOpen(item.title)}
                   onMouseLeave={() => setDropdownOpen("")}
                 >
-                  <button className="text-gray-700 text-[16px] flex items-center gap-1">
+                  <button className="text-gray-700 text-[16px] font-[400] flex items-center gap-1">
                     {item.title} <ChevronDown size={16} />
                   </button>
                   {dropdownOpen === item.title && (
@@ -163,7 +165,7 @@ export default function Navbar() {
                 <Link
                   key={index}
                   href={item.href}
-                  className="text-gray-700 text-[16px]"
+                  className="text-gray-700 font-[400] text-[16px]"
                 >
                   {item.title}
                 </Link>
